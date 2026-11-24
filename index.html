@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ananya Sukruta Mysore</title>
+<meta name="description" content="Ananya Sukruta Mysore is the CEO of AXIA, founder of Andora and Avera, and a bioinformatics student at UC San Diego working across biomedical AI, cell biology and health-technology policy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout: one white rounded "sheet" on a dotted grey backdrop; uppercase Outfit display type; pill navigation; click-to-open detail panels. */
+  :root {
+    --ink: #111111;
+    --ink-2: #3d3d3d;
+    --grey: #8a8a8a;
+    --line: #d9d9d9;
+    --paper: #ffffff;
+    --backdrop: #d6d6d6;
+    --display: "Outfit", "Helvetica Neue", Arial, sans-serif;
+    --text: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --fade: linear-gradient(90deg, #a3a3a3 0%, #111 55%, #3a3a3a 100%);
+    --fade-light: linear-gradient(90deg, #7a7a7a 0%, #ffffff 45%, #bdbdbd 100%);
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--text); font-size: 14px; line-height: 1.55;
+    background-color: var(--backdrop);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='1' cy='1' r='.7' fill='%23bcbcbc'/%3E%3C/svg%3E");
+    -webkit-font-smoothing: antialiased;
+    padding-left: max(0px, env(safe-area-inset-left, 0px)); padding-right: max(0px, env(safe-area-inset-right, 0px));
+  }
+  a { color: inherit; text-decoration: none; }
+  p, h1, h2, h3 { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  ::selection { background: var(--ink); color: #fff; }
+
+  .sheet { max-width: 1180px; margin: 36px auto; background: var(--paper); border-radius: 30px; overflow: hidden; box-shadow: 0 30px 80px -40px rgba(0,0,0,.35); }
+  .pad { padding-left: 52px; padding-right: 52px; }
+  .fade { background: var(--fade); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  section { border-top: 1px solid var(--line); }
+
+  /* ---------- Nav ---------- */
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 22px 52px; }
+  .logo { font-family: var(--display); font-size: 17px; letter-spacing: .05em; }
+  .logo b { font-weight: 400; color: var(--grey); }
+  .logo i { font-style: normal; color: var(--grey); }
+  .pills { display: flex; }
+  .pill { display: inline-flex; align-items: center; height: 30px; padding: 0 15px; margin-left: -1px; border: 1px solid var(--ink); border-radius: 999px; font-size: 10px; letter-spacing: .07em; text-transform: uppercase; background: #fff; transition: background .2s, color .2s; }
+  .pill:hover, .pill.on { background: var(--ink); color: #fff; }
+  .circles { display: flex; gap: 5px; }
+  .circ { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--ink); display: grid; place-items: center; background: #fff; transition: background .2s, color .2s; }
+  .circ:hover { background: var(--ink); color: #fff; }
+  .circ svg { width: 13px; height: 13px; }
+
+  .arrow { width: 70px; height: 70px; border-radius: 50%; border: 1px solid var(--ink-2); display: grid; place-items: center; transition: background .25s, color .25s; flex-shrink: 0; }
+  .arrow svg { width: 22px; height: 22px; transition: transform .25s; }
+  .arrow:hover { background: var(--ink); color: #fff; }
+  .arrow:hover svg { transform: rotate(45deg); }
+  .arrow.sm { width: 50px; height: 50px; }
+  .arrow.sm svg { width: 17px; height: 17px; }
+
+  .big { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(40px, 6.6vw, 84px); line-height: .92; letter-spacing: -0.01em; }
+  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 36px; }
+  .sec-head p { max-width: 340px; font-size: 12px; text-transform: uppercase; color: var(--ink-2); text-align: right; }
+
+  /* ---------- Hero ---------- */
+  .hero { border-top: 1px solid var(--line); padding-top: 34px; padding-bottom: 56px; }
+  .hero h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(56px, 14vw, 178px); line-height: .88; letter-spacing: -0.015em; }
+  .hero h1 .l1, .hero h1 .l2 { display: block; }
+  .hero h1 .l2 { padding-left: 14%; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 340px 1fr; gap: 32px; align-items: end; margin-top: -110px; position: relative; }
+  .hero-left { display: grid; gap: 18px; padding-bottom: 8px; }
+  .hero-left p { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; line-height: 1.6; }
+  .portrait { width: 340px; height: 340px; max-width: 100%; border-radius: 50%; overflow: hidden; position: relative; background: #0b0b0b; }
+  .portrait img, .portrait canvas { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 18%; filter: grayscale(1) contrast(1.05); transition: filter .5s ease; }
+  .portrait:hover img, .portrait:hover canvas { filter: grayscale(0); }
+  .portrait .scale { position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #d0d0d0; pointer-events: none; }
+  .portrait .scale span { display: inline-block; width: 42px; height: 2px; background: #e5e5e5; }
+  .hero-right { text-align: right; padding-bottom: 8px; }
+  .hero-right .claim { font-size: 12px; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 46px; line-height: 1.6; }
+  .hero-right ul { display: grid; gap: 14px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+
+  /* ---------- About ---------- */
+  .about { padding-top: 64px; padding-bottom: 64px; }
+  .about-top { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: end; margin-bottom: 44px; }
+  .big-wrap { display: inline-flex; align-items: flex-start; }
+  .big-wrap .arrow { margin-left: -28px; margin-top: -4px; background: rgba(255,255,255,.65); }
+  .quote { font-size: 12.5px; text-transform: uppercase; line-height: 1.6; max-width: 540px; justify-self: end; color: var(--ink-2); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+  .stat { padding: 34px 24px 26px; border-left: 1px solid var(--line); min-width: 0; }
+  .stat:first-child { border-left: 0; }
+  .stat .n { font-family: var(--display); font-weight: 300; font-size: clamp(40px, 4.6vw, 60px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat .l { margin-top: 12px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; }
+  .stat .s { margin-top: 3px; font-size: 11px; color: var(--grey); }
+
+  /* ---------- Marquee ---------- */
+  .marquee { overflow: hidden; background: var(--ink); color: #fff; border-top: 0; }
+  .marquee .track { display: flex; width: max-content; animation: slide 45s linear infinite; }
+  .marquee span { font-family: var(--display); font-size: 20px; font-weight: 300; text-transform: uppercase; padding: 15px 22px; white-space: nowrap; }
+  .marquee span::after { content: "✦"; margin-left: 44px; font-size: 12px; color: #777; vertical-align: middle; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- Ventures ---------- */
+  .ventures { padding-top: 64px; padding-bottom: 64px; }
+  .vgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .venture { border-radius: 22px; padding: 26px; min-height: 300px; display: flex; flex-direction: column; background: linear-gradient(160deg, #f5f5f5, #e0e0e0); position: relative; overflow: hidden; min-width: 0; }
+  .venture.dark { background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; }
+  .venture .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+  .venture .tag { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); }
+  .venture .live { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; padding: 4px 10px; border-radius: 999px; border: 1px solid currentColor; opacity: .8; white-space: nowrap; }
+  .venture .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .venture h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 34px; line-height: 1; margin-bottom: 10px; }
+  .venture p { font-size: 13px; color: var(--ink-2); max-width: 420px; }
+  .venture.dark p { color: #c7c7c7; }
+  .venture .foot-row { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-top: 24px; }
+  .venture .num { font-family: var(--display); font-weight: 200; font-size: 64px; line-height: .85; letter-spacing: -0.03em; }
+  .venture .num small { display: block; font-family: var(--text); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); margin-top: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; max-width: 55%; }
+  .chips span { font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(0,0,0,.22); }
+  .venture.dark .chips span { border-color: rgba(255,255,255,.28); }
+  .xlink { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 10.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid currentColor; padding-bottom: 1px; width: fit-content; transition: opacity .2s; }
+  .xlink:hover { opacity: .6; }
+
+  /* ---------- What I do ---------- */
+  .services { padding-top: 64px; padding-bottom: 64px; }
+  details.svc { margin-top: -1px; }
+  details.svc summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; }
+  details.svc summary::-webkit-details-marker { display: none; }
+  .svc .n, .svc .go { width: 64px; height: 64px; border-radius: 50%; border: 1px solid #bdbdbd; display: grid; place-items: center; font-family: var(--display); font-size: 18px; font-weight: 300; background: #fff; position: relative; z-index: 1; transition: background .25s, color .25s, border-color .25s; }
+  .svc .go svg { width: 18px; height: 18px; transition: transform .3s; }
+  .svc .label { height: 64px; margin: 0 -1px; border: 1px solid #bdbdbd; border-radius: 999px; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--display); font-size: clamp(14px, 2vw, 22px); font-weight: 300; text-transform: uppercase; letter-spacing: .02em; background: #fff; transition: background .25s, color .25s, border-color .25s; padding: 0 10px; }
+  details.svc[open] .n, details.svc[open] .go, details.svc[open] .label, details.svc summary:hover .n, details.svc summary:hover .go, details.svc summary:hover .label { background: var(--ink); color: #fff; border-color: var(--ink); }
+  details.svc[open] .go svg { transform: rotate(-90deg); }
+  .svc-body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; padding: 22px 82px 30px; font-size: 13px; color: var(--ink-2); animation: rise .35s ease; }
+  .svc-body ul { display: grid; gap: 6px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); }
+  .svc-body ul li { padding-top: 6px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 10px; }
+  .svc-body ul li span:last-child { color: var(--grey); text-align: right; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Featured tabs ---------- */
+  .featured { padding-top: 64px; padding-bottom: 72px; }
+  .tabs { display: inline-flex; margin-bottom: 28px; }
+  .tab { height: 50px; padding: 0 26px; border: 1px solid var(--ink); border-radius: 999px; margin-left: -14px; background: #fff; color: var(--ink); font-family: var(--display); font-size: 15px; text-transform: uppercase; letter-spacing: .03em; cursor: pointer; transition: background .2s, color .2s; position: relative; }
+  .tab:first-child { margin-left: 0; }
+  .tab.on { background: var(--ink); color: #fff; z-index: 1; }
+  .panel { display: none; }
+  .panel.on { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; animation: rise .4s ease; }
+  .card { border-radius: 20px; padding: 24px; min-height: 340px; background: linear-gradient(160deg, #f5f5f5, #dedede); display: flex; flex-direction: column; min-width: 0; }
+  .card.dark { background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; }
+  .card .tag { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); margin-bottom: 14px; }
+  .card h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.05; margin-bottom: 10px; }
+  .card p { font-size: 12.5px; color: var(--ink-2); }
+  .card.dark p { color: #c7c7c7; }
+  .card .huge { margin-top: auto; font-family: var(--display); font-weight: 200; font-size: 76px; line-height: .85; letter-spacing: -0.03em; padding-top: 18px; }
+  .card .huge small { display: block; font-family: var(--text); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; margin-top: 10px; color: var(--grey); }
+  .card ul.mini { margin-top: auto; padding-top: 18px; display: grid; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .03em; }
+  .card ul.mini li { display: flex; justify-content: space-between; gap: 10px; padding-top: 7px; border-top: 1px solid rgba(0,0,0,.12); }
+
+  /* ---------- Experience rows ---------- */
+  .exp { padding-top: 64px; padding-bottom: 56px; }
+  .rows { border-top: 1px solid var(--ink); }
+  .row { display: grid; grid-template-columns: 1fr 1.6fr 130px 50px; gap: 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); transition: padding .25s; }
+  .row:hover { padding-left: 12px; }
+  .row h3 { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); text-transform: uppercase; line-height: 1; }
+  .row .what { font-size: 12.5px; color: var(--ink-2); }
+  .row .what b { display: block; font-weight: 500; color: var(--ink); text-transform: uppercase; font-size: 11px; letter-spacing: .05em; margin-bottom: 4px; }
+  .row .when { font-size: 11px; text-transform: uppercase; color: var(--grey); text-align: right; letter-spacing: .04em; }
+
+  /* ---------- Publications ---------- */
+  .press { padding-top: 64px; padding-bottom: 64px; }
+  .pgrid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .pitem { padding: 24px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-height: 170px; transition: background .2s, color .2s; }
+  .pitem:hover { background: var(--ink); color: #fff; }
+  .pitem .src { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); }
+  .pitem h3 { font-family: var(--display); font-weight: 400; font-size: 18px; line-height: 1.2; text-transform: uppercase; }
+  .pitem p { font-size: 12px; color: var(--ink-2); }
+  .pitem:hover p { color: #cfcfcf; }
+
+  /* ---------- Honors ---------- */
+  .honors { padding-top: 64px; padding-bottom: 64px; }
+  .hlist { border-top: 1px solid var(--ink); }
+  .hrow { display: grid; grid-template-columns: 80px 1fr auto; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .hrow .yr { font-size: 11px; color: var(--grey); letter-spacing: .05em; }
+  .hrow h3 { font-family: var(--display); font-weight: 400; font-size: 18px; text-transform: uppercase; }
+  .hrow p { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-2); text-align: right; }
+
+  /* ---------- Off the clock ---------- */
+  .beyond { padding-top: 64px; padding-bottom: 64px; }
+  .life { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .life article { border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+  .life .visual { height: 220px; background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; display: flex; align-items: flex-end; justify-content: space-between; padding: 22px 24px; gap: 12px; }
+  .life .visual .huge { font-family: var(--display); font-weight: 200; font-size: 84px; line-height: .8; letter-spacing: -0.03em; }
+  .life .visual small { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: #9a9a9a; text-align: right; }
+  .life .visual.light { background: linear-gradient(160deg, #f5f5f5, #dedede); color: var(--ink); }
+  .life .body { padding: 22px 24px 26px; }
+  .life .tag { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); margin-bottom: 8px; }
+  .life h3 { font-family: var(--display); font-weight: 400; font-size: 26px; text-transform: uppercase; line-height: 1; margin-bottom: 10px; }
+  .life p { font-size: 13px; color: var(--ink-2); }
+
+  /* ---------- Education ---------- */
+  .edu { padding-top: 56px; padding-bottom: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .edu > div { padding: 0 24px; border-left: 1px solid var(--line); min-width: 0; }
+  .edu > div:first-child { padding-left: 0; border-left: 0; }
+  .edu .k { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); margin-bottom: 10px; }
+  .edu h3 { font-family: var(--display); font-weight: 400; font-size: 20px; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+  .edu p { font-size: 12.5px; color: var(--ink-2); }
+
+  /* ---------- Let's talk ---------- */
+  .talk { background: var(--ink); color: #fff; padding-top: 60px; padding-bottom: 30px; border-top: 0; border-radius: 30px 30px 0 0; }
+  .talk .socials { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: var(--display); font-weight: 300; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: #8f8f8f; margin-bottom: 26px; }
+  .talk .socials a:hover { color: #fff; }
+  .talk h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(64px, 14vw, 180px); line-height: .88; letter-spacing: -0.01em; background: var(--fade-light); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .talk .ctas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+  .talk .ctas a, .talk .ctas button { display: inline-flex; align-items: center; height: 54px; padding: 0 28px; border-radius: 999px; background: #fff; color: var(--ink); border: 1px solid #fff; font-family: var(--display); font-size: 15px; text-transform: uppercase; letter-spacing: .03em; cursor: pointer; transition: background .2s, color .2s; }
+  .talk .ctas a:hover, .talk .ctas button:hover { background: #d9d9d9; }
+  .talk .ctas .ghost { background: transparent; color: #fff; }
+  .talk .ctas .ghost:hover { background: #fff; color: var(--ink); }
+  .talk .email { margin-top: 18px; font-size: 13px; letter-spacing: .04em; color: #bdbdbd; user-select: all; }
+  .talk .legal { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 56px; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: #8f8f8f; }
+  .talk .legal b { color: #fff; font-weight: 500; }
+
+  /* ---------- Clickable items ---------- */
+  .clickable { cursor: pointer; position: relative; }
+  .clickable:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+  .venture.clickable, .card.clickable, .life article.clickable { transition: transform .3s ease, box-shadow .3s ease; }
+  .venture.clickable:hover, .card.clickable:hover, .life article.clickable:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -28px rgba(0,0,0,.45); }
+  .hint { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 10.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; opacity: .55; transition: opacity .2s; }
+  .clickable:hover .hint { opacity: 1; }
+  .hint::after { content: "↗"; font-size: 12px; }
+  .row.clickable:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ---------- Modal ---------- */
+  body.locked { overflow: hidden; }
+  .modal { position: fixed; inset: 0; z-index: 100; overflow-y: auto; padding: calc(32px + env(safe-area-inset-top, 0px)) 20px calc(32px + env(safe-area-inset-bottom, 0px)); background: rgba(17,17,17,.55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .modal.open { animation: fadeIn .25s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal-box { position: relative; max-width: 980px; margin: 0 auto; background: #fff; border-radius: 28px; padding: 44px 48px 48px; animation: rise .35s ease; }
+  .modal-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--ink); background: #fff; color: var(--ink); font-size: 20px; line-height: 1; cursor: pointer; transition: background .2s, color .2s; }
+  .modal-close:hover { background: var(--ink); color: #fff; }
+  .m-tag { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: var(--grey); margin-bottom: 12px; padding-right: 60px; }
+  .m-title { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(36px, 6vw, 64px); line-height: .92; letter-spacing: -0.01em; margin-bottom: 22px; background: var(--fade); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 50px; }
+  .m-lead { font-size: 15px; line-height: 1.65; color: var(--ink-2); max-width: 720px; margin-bottom: 14px; }
+  .m-list { display: grid; gap: 8px; margin: 18px 0 24px; max-width: 760px; }
+  .m-list li { position: relative; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); }
+  .m-list li::before { content: ""; position: absolute; left: 0; top: .7em; width: 8px; height: 1px; background: var(--ink); }
+  .m-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); border: 1px solid var(--line); margin: 24px 0; }
+  .m-facts div { padding: 18px 18px 14px; border-left: 1px solid var(--line); }
+  .m-facts div:first-child { border-left: 0; }
+  .m-facts b { display: block; font-family: var(--display); font-weight: 300; font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+  .m-facts span { display: block; margin-top: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--grey); }
+  .m-h { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 18px; margin: 30px 0 12px; padding-top: 12px; border-top: 1px solid var(--ink); }
+  .m-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .m-links a { display: inline-flex; align-items: center; height: 42px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--ink); background: #fff; color: var(--ink); font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; transition: background .2s, color .2s; }
+  .m-links a:hover, .m-links a.solid { background: var(--ink); color: #fff; }
+  /* colocalisation bars (Rab11a panel) */
+  .coloc { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; max-width: 620px; }
+  .coloc .b { display: grid; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); }
+  .coloc .b div:first-child { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+  .coloc .t { height: 8px; border-radius: 99px; background: #ececec; overflow: hidden; }
+  .coloc .f { height: 100%; background: var(--ink); border-radius: 99px; }
+  .coloc .f.lo { background: #9a9a9a; }
+
+  @media (max-width: 680px) {
+    .modal { padding-left: 10px; padding-right: 10px; }
+    .modal-box { padding: 28px 20px 28px; border-radius: 22px; }
+    .coloc { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1060px) {
+    .hero-grid { grid-template-columns: 1fr 280px 1fr; margin-top: -70px; }
+    .portrait { width: 280px; height: 280px; }
+    .panel.on { grid-template-columns: 1fr 1fr; }
+    .panel.on .card:first-child { grid-column: 1 / -1; min-height: 280px; }
+    .row { grid-template-columns: 1fr 1.4fr 110px 50px; }
+  }
+  @media (max-width: 860px) {
+    .sheet { margin: 12px max(12px, env(safe-area-inset-left, 0px)); border-radius: 22px; }
+    .pad, .nav { padding-left: 22px; padding-right: 22px; }
+    .pills { display: none; }
+    .hero h1 .l2 { padding-left: 8%; }
+    .hero-grid { grid-template-columns: 1fr; margin-top: 28px; gap: 26px; }
+    .portrait { order: -1; justify-self: center; width: 250px; height: 250px; }
+    .hero-right { text-align: left; }
+    .hero-right .claim { margin-bottom: 18px; }
+    .hero-right ul { display: flex; flex-wrap: wrap; gap: 6px; }
+    .hero-right li { border: 1px solid var(--ink); border-radius: 999px; padding: 5px 12px; font-size: 10.5px; }
+    .about-top { grid-template-columns: 1fr; gap: 20px; }
+    .quote { justify-self: start; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .sec-head { flex-direction: column; align-items: flex-start; }
+    .sec-head p { text-align: left; }
+    .vgrid, .panel.on, .life { grid-template-columns: 1fr; }
+    .svc-body { grid-template-columns: 1fr; padding: 18px 8px 24px; }
+    .tab { height: 42px; padding: 0 18px; font-size: 12.5px; margin-left: -10px; }
+    .row { grid-template-columns: 1fr 50px; gap: 8px 14px; }
+    .row .what { grid-column: 1 / -1; grid-row: 2; }
+    .row .when { grid-column: 1; grid-row: 3; text-align: left; }
+    .row .arrow { grid-column: 2; grid-row: 1; }
+    .pgrid { grid-template-columns: 1fr; }
+    .hrow { grid-template-columns: 64px 1fr; }
+    .hrow p { grid-column: 2; text-align: left; }
+    .edu { grid-template-columns: 1fr; gap: 24px; }
+    .edu > div { padding: 0; border-left: 0; }
+  }
+  @media (max-width: 520px) {
+    .circles .circ:nth-child(n+4) { display: none; }
+    .stat { padding: 24px 14px 20px; }
+    details.svc summary { grid-template-columns: 50px 1fr 50px; }
+    .svc .n, .svc .go { width: 50px; height: 50px; font-size: 15px; }
+    .svc .label { height: 50px; font-size: 12px; }
+    .venture .foot-row { flex-direction: column; align-items: flex-start; }
+    .chips { justify-content: flex-start; max-width: none; }
+    .talk .ctas a, .talk .ctas button { height: 46px; padding: 0 20px; font-size: 13px; }
+    .life .visual .huge { font-size: 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marquee .track { animation: none; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></symbol>
+    <symbol id="right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></symbol>
+    <symbol id="in" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></symbol>
+    <symbol id="gh" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 6v12M12 6v12M16 6v12"/></symbol>
+  </defs>
+</svg>
+
+<div class="sheet">
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a class="logo" href="#top"><b>A</b>NANYA<i>.</i></a>
+    <nav class="pills" aria-label="Main">
+      <a class="pill on" href="#top">Home</a>
+      <a class="pill" href="#about">About</a>
+      <a class="pill" href="#ventures">Ventures</a>
+      <a class="pill" href="#work">Work</a>
+      <a class="pill" href="#experience">Experience</a>
+      <a class="pill" href="#beyond">Beyond</a>
+      <a class="pill" href="#contact">Contact</a>
+    </nav>
+    <div class="circles">
+      <a class="circ" href="https://www.linkedin.com/in/ananya-sukruta-mysore-547a15292" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#in"/></svg></a>
+      <a class="circ" href="https://github.com/ananyamysore" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#gh"/></svg></a>
+      <a class="circ" href="#contact" aria-label="Email"><svg><use href="#mail"/></svg></a>
+      <a class="circ" href="#services" aria-label="What I do"><svg><use href="#bars"/></svg></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero pad">
+      <h1 class="fade"><span class="l1">Ananya</span><span class="l2">Mysore.</span></h1>
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p>Founder · AXIA, Andora &amp; Avera<br>Bioinformatics · UC San Diego</p>
+          <a class="arrow" href="#ventures" aria-label="See my ventures"><svg><use href="#arr"/></svg></a>
+        </div>
+        <!-- To use a photo instead: replace the canvas with <img src="me.jpg" alt="Portrait of Ananya Sukruta Mysore"> -->
+        <div class="portrait" title="Live-cell confocal field: dsRed-Rab11a and CD63-EGFP. Hover for colour.">
+          <canvas id="cells" aria-label="Animated confocal microscopy field of fluorescent vesicles in a beta cell" role="img"></canvas>
+          <div class="scale"><span></span>5 µm</div>
+        </div>
+        <div class="hero-right">
+          <p class="claim">I build biomedical AI that has to hold up in the clinic, and I do the cell biology underneath it.</p>
+          <ul>
+            <li>Biomedical AI</li>
+            <li>Clinical Machine Learning</li>
+            <li>Cell &amp; Molecular Biology</li>
+            <li>RL Environments</li>
+            <li>Health-Tech Policy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about pad" id="about">
+      <div class="about-top">
+        <div class="big-wrap">
+          <h2 class="big fade">About</h2>
+          <a class="arrow sm" href="#ventures" aria-label="Next"><svg><use href="#arr"/></svg></a>
+        </div>
+        <p class="quote">
+          “Ananya Sukruta Mysore is a three-time founder and a bioinformatics student at UC San Diego. As CEO of AXIA she builds
+          self-updating training environments for AI agents, with pilots at PhonePe, Infosys and Qualcomm. She founded Andora, a
+          predictive-medicine platform, and is building Avera in biodefense. At the Indian Institute of Science she was named an
+          Outstanding Scholar for her research on insulin-cell vesicle trafficking.”
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">3</div><div class="l">Ventures Founded</div><div class="s">AXIA · Andora · Avera</div></div>
+        <div class="stat"><div class="n">0.91</div><div class="l">Held-out AUC</div><div class="s">type 2 diabetes progression model</div></div>
+        <div class="stat"><div class="n">1/31</div><div class="l">RSI-India Scholars</div><div class="s">Outstanding Scholar, IISc</div></div>
+        <div class="stat"><div class="n">25K+</div><div class="l">Elders Reached</div><div class="s">through Project Nightingale</div></div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Advised by Amazon &amp; Microsoft leaders</span><span>EWOR</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Accepted · Journal of Emerging Investigators</span>
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Advised by Amazon &amp; Microsoft leaders</span><span>EWOR</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Accepted · Journal of Emerging Investigators</span>
+      </div>
+    </div>
+
+    <!-- ============ VENTURES ============ -->
+    <section class="ventures pad" id="ventures">
+      <div class="sec-head">
+        <h2 class="big fade">Ventures</h2>
+        <p>Companies and initiatives I’ve founded, from AI infrastructure to care on the ground.</p>
+      </div>
+      <div class="vgrid">
+        <article class="venture dark clickable" data-open="axia" tabindex="0" role="button">
+          <div class="top"><span class="tag">Co-Founder &amp; CEO · 2026 –</span><span class="live">Pilots live</span></div>
+          <h3>AXIA</h3>
+          <p>Self-updating reinforcement-learning environments for training AI agents. They run real enterprise software and repair themselves with every upstream release.</p>
+          <div class="foot-row">
+            <div class="num">RL<small>agents · living environments · verifiers</small></div>
+            <div class="chips"><span>PhonePe</span><span>Infosys</span><span>Qualcomm</span></div>
+          </div>
+        </article>
+        <article class="venture clickable" data-open="andora" tabindex="0" role="button">
+          <div class="top"><span class="tag">Founder · 2023 –</span><span class="live">Building</span></div>
+          <h3>Andora</h3>
+          <p>A predictive-medicine platform. Taken from 0→1 through 86+ discovery conversations across 5 sectors and 11 product iterations.</p>
+          <div class="foot-row">
+            <div class="num">$728K<small>quarterly pipeline · 13 pilot opportunities</small></div>
+            <div class="chips"><span>XGBoost</span><span>EHR</span><span>Risk models</span></div>
+          </div>
+        </article>
+        <article class="venture clickable" data-open="avera" tabindex="0" role="button">
+          <div class="top"><span class="tag">Founder</span><span class="live">In development</span></div>
+          <h3>Avera</h3>
+          <p>An early-stage biodefense platform, bringing the same AI-for-biology approach to threats that move faster than institutions do.</p>
+          <div class="foot-row">
+            <div class="num">Bio<small>defense · early stage</small></div>
+            <div class="chips"><span>Biosecurity</span><span>AI</span></div>
+          </div>
+        </article>
+        <article class="venture dark clickable" data-open="nightingale" tabindex="0" role="button">
+          <div class="top"><span class="tag">Founder · 2023 – 2025 · Nightingales Medical Trust</span><span class="live">Impact</span></div>
+          <h3>Project Nightingale</h3>
+          <p>Dementia and geriatric screening camps for elders. Workflow changes I coordinated cut wait times by 22% and raised screening rates by 18%.</p>
+          <div class="foot-row">
+            <div class="num">25K+<small>elders · 60+ camps · 500+ hours</small></div>
+            <div class="chips"><span>Dementia</span><span>Geriatric care</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ WHAT I DO ============ -->
+    <section class="services pad" id="services">
+      <div class="sec-head">
+        <h2 class="big fade">What I Do</h2>
+        <p>The toolkit behind the ventures: the bench, the model and the policy that lets it ship.</p>
+      </div>
+      <div class="svc-list">
+        <details class="svc" open>
+          <summary><span class="n">1</span><span class="label">Clinical Machine Learning</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>Longitudinal risk models on patient records, a CPU-only CNN for chest radiographs, and evaluation tooling that audits clinical models for sensitivity, specificity and robustness.</p>
+            <ul><li><span>T2D progression</span><span>0.91 AUC</span></li><li><span>Pneumonia CNN</span><span>0.938 AUC</span></li><li><span>ClinEval</span><span>10+ audit metrics</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">2</span><span class="label">Cell &amp; Molecular Biology</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>Mammalian cell culture, plasmid transfection and secretome work, from insulin-secreting β-cells at IISc to mesenchymal stem cells at HCG Hospitals.</p>
+            <ul><li><span>Transfection</span><span>Turbofect</span></li><li><span>ELISA · PCR</span><span>Cytokines</span></li><li><span>SDS-PAGE · MTT</span><span>Viability</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">3</span><span class="label">Quantitative Imaging</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>Live-cell confocal microscopy and colocalisation statistics. I turn images of vesicles into numbers that survive a t-test.</p>
+            <ul><li><span>Confocal</span><span>Nikon Ti2 · 100×</span></li><li><span>Fiji / JACoP</span><span>Pearson’s · Manders’</span></li><li><span>Statistics</span><span>Two-tailed t-tests</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">4</span><span class="label">AI Agents &amp; RL Environments</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>At AXIA: living environments built on real enterprise software, and verifiers hardened against reward hacking by models told to cheat.</p>
+            <ul><li><span>ERPNext</span><span>First environment</span></li><li><span>Verifiers</span><span>Hack-tested</span></li><li><span>Pilots</span><span>3 enterprises</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">5</span><span class="label">Health-Tech Policy</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>AI governance for public services and healthcare with the Government of Karnataka, plus constitutional and economic research.</p>
+            <ul><li><span>Govt. of Karnataka</span><span>AI framework</span></li><li><span>CLPR</span><span>Constitutional law</span></li><li><span>ISEC</span><span>2 authored works</span></li></ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED WORK ============ -->
+    <section class="featured pad" id="work">
+      <div class="sec-head">
+        <h2 class="big fade">Featured Work</h2>
+        <a class="arrow" href="#experience" aria-label="Next section"><svg><use href="#arr"/></svg></a>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Work categories">
+        <button class="tab on" role="tab" aria-selected="true" data-panel="p-research">Research</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-ai">AI &amp; ML</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="p-impact">Impact</button>
+      </div>
+
+      <div class="panel on" id="p-research" role="tabpanel">
+        <article class="card dark clickable" data-open="rab11a" tabindex="0" role="button">
+          <p class="tag">Indian Institute of Science · RSI-India 2025</p>
+          <h3>Rab11a &amp; Vesicle Trafficking in β-Cells</h3>
+          <p>Does Rab11a position multivesicular bodies in insulin-secreting cells? Dominant-negative Rab11a says yes.</p>
+          <div class="huge">0.91→0.71<small>Pearson’s r, WT vs S25N · p &lt; 0.001</small></div>
+        </article>
+        <article class="card clickable" data-open="secretome" tabindex="0" role="button">
+          <p class="tag">HCG Hospitals · Accepted, JEI</p>
+          <h3>Plant-Based MSC Secretome</h3>
+          <p>India’s first plant-based stem-cell secretome platform, a cell-free candidate therapy for autoimmune disease.</p>
+          <ul class="mini"><li><span>Markers</span><span>IL-6 · IDO · IFN-γ · TNF-α</span></li><li><span>Timepoints</span><span>24 · 48 · 72 h</span></li></ul>
+        </article>
+        <article class="card clickable" data-open="autophagy" tabindex="0" role="button">
+          <p class="tag">Scientific Review · Under review, IJHSR</p>
+          <h3>Autophagy–Lysosome Network</h3>
+          <p>Mitochondrial dysfunction, autophagy and AMPK–mTOR signalling across five neurodegenerative diseases.</p>
+          <ul class="mini"><li><span>Studies</span><span>60+</span></li><li><span>Diseases</span><span>AD · PD · HD · ALS · FTD</span></li></ul>
+        </article>
+      </div>
+
+      <div class="panel" id="p-ai" role="tabpanel">
+        <article class="card dark clickable" data-open="t2d" tabindex="0" role="button">
+          <p class="tag">Andora · Longitudinal risk model</p>
+          <h3>Type 2 Diabetes Progression</h3>
+          <p>XGBoost on 150+ engineered clinical and temporal features, built for early-risk stratification of patients.</p>
+          <div class="huge">0.91<small>held-out AUC · 84% sensitivity</small></div>
+        </article>
+        <article class="card clickable" data-open="pneumonia" tabindex="0" role="button">
+          <p class="tag">Independent Research · 2023 – 2025</p>
+          <h3>Lightweight Pneumonia CNN</h3>
+          <p>A 105K-parameter network, no pretrained backbone, CPU only. Built for clinics without GPUs or radiologists.</p>
+          <ul class="mini"><li><span>AUC</span><span>0.938</span></li><li><span>Sensitivity</span><span>97.95%</span></li></ul>
+        </article>
+        <article class="card clickable" data-open="polaris" tabindex="0" role="button">
+          <p class="tag">Polaris Inc. · Research Head, ML for Drug Discovery</p>
+          <h3>Six Open-Source Tools</h3>
+          <p>From an 8-step single-cell RNA-seq pipeline to a 5-level evidence model for secretome claims.</p>
+          <a class="xlink" href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub ↗</a>
+          <ul class="mini"><li><span>CellState</span><span>scRNA-seq</span></li><li><span>TinyMedVision</span><span>15 CI tests</span></li></ul>
+        </article>
+      </div>
+
+      <div class="panel" id="p-impact" role="tabpanel">
+        <article class="card dark clickable" data-open="nightingale" tabindex="0" role="button">
+          <p class="tag">Nightingales Medical Trust · Founder</p>
+          <h3>Project Nightingale</h3>
+          <p>Dementia and geriatric camps, with workflow changes that made screening faster and more complete.</p>
+          <div class="huge">−22%<small>wait times · +18% screening rates</small></div>
+        </article>
+        <article class="card clickable" data-open="wearable" tabindex="0" role="button">
+          <p class="tag">Conrad Innovation Challenge · Merit Scholar</p>
+          <h3>Multi-Purpose Safety Wearable</h3>
+          <p>Designed and pitched a wearable for personal safety, built for women and underserved communities.</p>
+          <ul class="mini"><li><span>Field</span><span>6,000+ entrants</span></li><li><span>Year</span><span>2025</span></li></ul>
+        </article>
+        <article class="card clickable" data-open="club" tabindex="0" role="button">
+          <p class="tag">Co-Founder &amp; President</p>
+          <h3>Research Club &amp; Doctor’s Creed</h3>
+          <p>Started a student research club at TISB and co-founded Doctor’s Creed. Also founded OpenMed QA for open-source medical supplies.</p>
+          <ul class="mini"><li><span>School</span><span>TISB</span></li><li><span>Years</span><span>2024 – 2026</span></li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="exp pad" id="experience">
+      <div class="sec-head">
+        <h2 class="big fade">Experience</h2>
+        <p>Labs, hospitals and government offices where I’ve done the work.</p>
+      </div>
+      <div class="rows">
+        <div class="row clickable" data-open="rab11a" tabindex="0" role="button">
+          <h3>IISc</h3>
+          <p class="what"><b>Research Scholar · RSI-India, inaugural cohort</b>Live-cell imaging of Rab11a-dependent MVB trafficking in pancreatic β-cells under Dr. Nikhil Gandasi. Named Outstanding Scholar.</p>
+          <span class="when">Summer 2025</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="secretome" tabindex="0" role="button">
+          <h3>HCG Hospitals</h3>
+          <p class="what"><b>Cellular Engineering Intern · Regenerative Medicine</b>Led the experimental pipeline for a plant-based MSC secretome platform under Dr. Jyothsna Rao, Research Director, ISSL.</p>
+          <span class="when">2024 – 2025</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="karnataka" tabindex="0" role="button">
+          <h3>Govt. of Karnataka</h3>
+          <p class="what"><b>Policy Analyst &amp; Fellow · Office of the IT Minister</b>Assessed the state’s AI governance framework across public services, healthcare and startups.</p>
+          <span class="when">2026</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="polaris" tabindex="0" role="button">
+          <h3>Polaris Inc.</h3>
+          <p class="what"><b>Research Head · ML for Drug Discovery (freelance)</b>Built six open-source tools for single-cell analysis, medical vision robustness and clinical model audits.</p>
+          <span class="when">2025 – 2026</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="clpr" tabindex="0" role="button">
+          <h3>CLPR</h3>
+          <p class="what"><b>Project Intern · Centre for Law &amp; Policy Research</b>Constitutional analysis of Articles 14, 15, 19 and 21 for the marriage-equality proceedings, under Adv. Jayna Kothari.</p>
+          <span class="when">Apr – May 2023</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="isec" tabindex="0" role="button">
+          <h3>ISEC</h3>
+          <p class="what"><b>Project Intern · Institute for Social &amp; Economic Change</b>Synthesised 100+ sources under Prof. Krishna Raj and authored two works on population growth and currency digitisation.</p>
+          <span class="when">Apr – Jun 2024</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="press pad" id="publications">
+      <div class="sec-head">
+        <h2 class="big fade">Publications</h2>
+        <p>Papers, reviews and talks.</p>
+      </div>
+      <div class="pgrid">
+        <div class="pitem clickable" data-open="secretome" tabindex="0" role="button">
+          <span class="src">Journal of Emerging Investigators · Accepted</span>
+          <h3>The MSC secretome as a cell-free immunotherapeutic strategy for autoimmune disease</h3>
+          <p>Mysore, A. S., Srinivasan, A. Xeno-free PLAY® vs FBS culture, and their effect on IL-6, IDO, IFN-γ and TNF-α.</p>
+        </div>
+        <div class="pitem clickable" data-open="autophagy" tabindex="0" role="button">
+          <span class="src">IJHSR · Under review</span>
+          <h3>Cellular renewal in the brain</h3>
+          <p>Mysore, A. S., Purushothaman, S. S. A review of autophagy and lysosomal clearance in neurodegeneration.</p>
+        </div>
+        <div class="pitem clickable" data-open="rab11a" tabindex="0" role="button">
+          <span class="src">RSI-India · IISc · July 2025</span>
+          <h3>Rab11a-mediated regulation of vesicle trafficking in pancreatic β-cells</h3>
+          <p>Mysore, A. S. Paper and talk.</p>
+        </div>
+        <div class="pitem clickable" data-open="secretome" tabindex="0" role="button">
+          <span class="src">HCG Research Symposium · 2025</span>
+          <h3>MSC secretome immunomodulation in autoimmune disease</h3>
+          <p>Co-presenter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HONORS ============ -->
+    <section class="honors pad" id="honors">
+      <div class="sec-head">
+        <h2 class="big fade">Honors</h2>
+        <p>Selected competitions and awards.</p>
+      </div>
+      <div class="hlist">
+        <div class="hrow"><span class="yr">2025</span><h3>RCSU Science Challenge, Imperial College</h3><p>2nd place worldwide · 2,000+ entrants</p></div>
+        <div class="hrow"><span class="yr">2025</span><h3>Outstanding Scholar, RSI-India</h3><p>Indian Institute of Science · 1 of 31</p></div>
+        <div class="hrow"><span class="yr">2025</span><h3>British Biology Olympiad</h3><p>High Commendation · Top 3% of 180,000+</p></div>
+        <div class="hrow"><span class="yr">2025</span><h3>Conrad Innovation Challenge</h3><p>Merit Scholar · 6,000+ entrants</p></div>
+        <div class="hrow"><span class="yr">2025</span><h3>Avogadro Exam, U. Waterloo</h3><p>Top 5% internationally</p></div>
+        <div class="hrow"><span class="yr">2024</span><h3>CBSE Board Examinations</h3><p>National Rank #1 · French &amp; Social Science</p></div>
+        <div class="hrow"><span class="yr">2016–24</span><h3>Intl. English &amp; Math Olympiads</h3><p>Seven gold medals</p></div>
+        <div class="hrow"><span class="yr">2019</span><h3>NASTA Gold Medal of Excellence</h3><p>National Rank #75 · State Rank #3</p></div>
+        <div class="hrow"><span class="yr">2016</span><h3>ICAS, UNSW Global</h3><p>High Distinction · Top 1% of 1M+</p></div>
+      </div>
+    </section>
+
+    <!-- ============ OFF THE CLOCK ============ -->
+    <section class="beyond pad" id="beyond">
+      <div class="sec-head">
+        <h2 class="big fade">Off the Clock</h2>
+        <p>Music and medicine: the practice behind the patience.</p>
+      </div>
+      <div class="life">
+        <article class="clickable" data-open="violin" tabindex="0" role="button">
+          <div class="visual"><span class="huge">150+</span><small>concerts &amp;<br>recitals</small></div>
+          <div class="body">
+            <p class="tag">Music · Violin</p>
+            <h3>First Chair Violin</h3>
+            <p>First chair across 150+ orchestral concerts and recitals. Named to the ABRSM International Merit List at Grades 3, 6 and 7.</p>
+          </div>
+        </article>
+        <article class="clickable" data-open="nightingale" tabindex="0" role="button">
+          <div class="visual light"><span class="huge">500+</span><small>hours at<br>elder-care camps</small></div>
+          <div class="body">
+            <p class="tag">Medical outreach · 2023 – 2025</p>
+            <h3>Nightingales Medical Trust</h3>
+            <p>Dementia and geriatric camps reaching 25,000+ elders. It is where I first saw how much care depends on the workflow around it.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="edu pad">
+      <div><p class="k">University</p><h3>UC San Diego</h3><p>B.S. Bioinformatics · Class of 2030</p></div>
+      <div><p class="k">Pre-university</p><h3>The International School Bangalore</h3><p>IB Diploma · HL Biology, Chemistry, Mathematics</p></div>
+      <div><p class="k">Further study</p><h3>Programming · RNA · Stem Cells · Epigenetics</h3><p>Harvard CS50P · Stanford Eterna · AMNH · University of Melbourne</p></div>
+    </section>
+
+    <!-- ============ LET'S TALK ============ -->
+    <section class="talk pad" id="contact">
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/ananya-sukruta-mysore-547a15292" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub</a>
+        <a href="#ventures">AXIA</a>
+        <a href="#ventures">Andora</a>
+        <a href="#work">Research</a>
+        <a href="#publications">Publications</a>
+      </div>
+      <h2>Let’s Talk</h2>
+      <div class="ctas">
+        <a href="https://www.linkedin.com/in/ananya-sukruta-mysore-547a15292" target="_blank" rel="noopener">LinkedIn</a>
+        <button type="button" id="copyEmail">Copy email</button>
+        <a class="ghost" href="mailto:anmysore@ucsd.edu?subject=Hello%20Ananya">Contact Me</a>
+      </div>
+      <p class="email" id="emailText">anmysore@ucsd.edu</p>
+      <div class="legal">
+        <span>© <b>Ananya Sukruta Mysore</b> 2026. All rights reserved</span>
+        <span>San Diego · Bengaluru</span>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============ DETAIL PANELS ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<template id="t-axia">
+  <p class="m-tag">Co-Founder &amp; Chief Executive Officer · 2026 – Present</p>
+  <h2 class="m-title" id="m-title">AXIA</h2>
+  <p class="m-lead">AXIA builds self-updating reinforcement-learning environments for training AI agents. Static benchmarks go stale the moment the software they copy ships a new version. AXIA’s environments run the real thing and keep up with it.</p>
+  <div class="m-facts"><div><b>3</b><span>enterprise pilots: PhonePe, Infosys, Qualcomm</span></div><div><b>ERPNext</b><span>first live environment</span></div></div>
+  <ul class="m-list">
+    <li>“Living” environments run real enterprise software, detect each upstream release, and automatically re-validate, repair or flag every training task.</li>
+    <li>Hack-tested verifiers: each is attacked by a model instructed to pass without doing the work, to eliminate reward hacking, the top quality concern AI labs cite.</li>
+    <li>Advised by leaders from Amazon and Microsoft and by EWOR Fellows.</li>
+    <li>I lead product, strategy, fundraising and go-to-market with co-founder and CTO Tanishi Dutt.</li>
+  </ul>
+</template>
+
+<template id="t-andora">
+  <p class="m-tag">Founder · 2023 – Present</p>
+  <h2 class="m-title" id="m-title">Andora</h2>
+  <p class="m-lead">A predictive-medicine platform built to flag disease risk early enough to act on it.</p>
+  <div class="m-facts"><div><b>$728K</b><span>quarterly pipeline</span></div><div><b>13</b><span>enterprise pilot opportunities</span></div><div><b>86+</b><span>discovery conversations, 5 sectors</span></div><div><b>11</b><span>product iterations</span></div></div>
+  <ul class="m-list">
+    <li>Screened 8,437 patient records and benchmarked 127+ ML models, biomedical datasets and computational tools on predictive performance, sensitivity, specificity, inference latency and compute cost.</li>
+    <li>Built an XGBoost longitudinal model of type 2 diabetes progression: 0.91 held-out AUC, 84% sensitivity, 150+ features.</li>
+    <li>ROI models projecting 18.4–31.7% compute-cost reduction.</li>
+  </ul>
+</template>
+
+<template id="t-avera">
+  <p class="m-tag">Founder · In development</p>
+  <h2 class="m-title" id="m-title">Avera</h2>
+  <p class="m-lead">An early-stage biodefense platform. More soon.</p>
+</template>
+
+<template id="t-nightingale">
+  <p class="m-tag">Founder · Project Nightingale · Nightingales Medical Trust · 2023 – 2025</p>
+  <h2 class="m-title" id="m-title">Project Nightingale</h2>
+  <p class="m-lead">Dementia and geriatric camps for elders in Bengaluru. Beyond volunteering at the camps, I coordinated workflow changes that made each one see more people, faster.</p>
+  <div class="m-facts"><div><b>25K+</b><span>elders reached</span></div><div><b>60+</b><span>dementia &amp; geriatric camps</span></div><div><b>−22%</b><span>wait times</span></div><div><b>+18%</b><span>screening rates</span></div></div>
+</template>
+
+<template id="t-rab11a">
+  <p class="m-tag">Indian Institute of Science · RSI-India, inaugural cohort · Summer 2025</p>
+  <h2 class="m-title" id="m-title">Rab11a in β-Cells</h2>
+  <p class="m-lead">I tested whether Rab11a activity is needed to position multivesicular bodies (MVBs) in INS-1 832/13 insulin-secreting cells. I co-expressed dsRed-Rab11a, either wild-type or the dominant-negative S25N mutant, with the MVB marker CD63-EGFP.</p>
+  <div class="m-facts"><div><b>1 of 31</b><span>scholars nationally, &lt;4% acceptance</span></div><div><b>15</b><span>cells per condition</span></div><div><b>p &lt; 0.001</b><span>two-tailed t-test</span></div></div>
+  <h3 class="m-h">Colocalisation, wild-type vs S25N</h3>
+  <div class="coloc" role="img" aria-label="Pearson's r fell from 0.91 to 0.71; Manders' M2 fell from 0.74 to 0.45.">
+    <div class="b"><div><span>Pearson’s r · WT</span><span>0.91</span></div><div class="t"><div class="f" style="width:91%"></div></div></div>
+    <div class="b"><div><span>Pearson’s r · S25N</span><span>0.71</span></div><div class="t"><div class="f lo" style="width:71%"></div></div></div>
+    <div class="b"><div><span>Manders’ M2 · WT</span><span>0.74</span></div><div class="t"><div class="f" style="width:74%"></div></div></div>
+    <div class="b"><div><span>Manders’ M2 · S25N</span><span>0.45</span></div><div class="t"><div class="f lo" style="width:45%"></div></div></div>
+  </div>
+  <h3 class="m-h">Methods</h3>
+  <ul class="m-list">
+    <li>Cell culture, coverslip seeding and Turbofect transient transfection.</li>
+    <li>Live-cell confocal imaging on a Nikon Ti2 at 100× oil.</li>
+    <li>Colocalisation in Fiji/JACoP (Pearson’s and Manders’ coefficients).</li>
+    <li>PI: Dr. Nikhil Gandasi · Mentor: Priyadarshini Veerabhadraswamy. I wrote and presented the final paper, and was named Outstanding Scholar of the cohort.</li>
+  </ul>
+</template>
+
+<template id="t-secretome">
+  <p class="m-tag">HCG Hospitals · Cellular Engineering Intern, Regenerative Medicine · 2024 – 2025</p>
+  <h2 class="m-title" id="m-title">MSC Secretome</h2>
+  <p class="m-lead">I led the experimental pipeline for India’s first plant-based mesenchymal stem cell secretome platform, a cell-free candidate therapy for chronic autoimmune disease, under Dr. Jyothsna Rao, Research Director, ISSL.</p>
+  <ul class="m-list">
+    <li>Compared MSCs grown in FBS against plant-based, xeno-free PLAY® medium, with and without inflammatory licensing, for IL-6 and IDO secretion.</li>
+    <li>Measured secretome suppression of IFN-γ and TNF-α at 24, 48 and 72 h. PLAY-MSCs suppressed IFN-γ more than FBS-MSCs at every time point.</li>
+    <li>Techniques: cell culture, ELISA, PCR, SDS-PAGE, MTT viability and cytotoxicity assays.</li>
+  </ul>
+  <div class="m-facts"><div><b>JEI</b><span>manuscript accepted</span></div><div><b>3</b><span>timepoints: 24 · 48 · 72 h</span></div><div><b>4</b><span>cytokines and markers</span></div></div>
+</template>
+
+<template id="t-autophagy">
+  <p class="m-tag">Independent scientific review · Under review, IJHSR · 2024 – 2025</p>
+  <h2 class="m-title" id="m-title">Autophagy &amp; Neuro&shy;degeneration</h2>
+  <p class="m-lead">With S. S. Purushothaman, I synthesised 60+ primary studies on mitochondrial dysfunction, impaired autophagy and AMPK–mTOR dysregulation across Alzheimer’s, Parkinson’s, Huntington’s, ALS and frontotemporal dementia.</p>
+  <div class="m-facts"><div><b>60+</b><span>primary studies</span></div><div><b>5</b><span>neurodegenerative diseases</span></div></div>
+</template>
+
+<template id="t-t2d">
+  <p class="m-tag">Andora · Longitudinal risk model</p>
+  <h2 class="m-title" id="m-title">Type 2 Diabetes Progression</h2>
+  <p class="m-lead">An XGBoost model that forecasts type 2 diabetes progression, designed around early-risk identification so patients can be stratified for intervention before they progress.</p>
+  <div class="m-facts"><div><b>0.91</b><span>held-out AUC</span></div><div><b>84%</b><span>sensitivity</span></div><div><b>150+</b><span>clinical &amp; temporal features</span></div></div>
+  <ul class="m-list">
+    <li>Features engineered across demographics, labs, medications, comorbidities and utilisation patterns.</li>
+    <li>Benchmarked against 127+ models and tools on sensitivity, specificity, latency and compute cost.</li>
+  </ul>
+</template>
+
+<template id="t-pneumonia">
+  <p class="m-tag">Independent Research · Dec 2023 – Feb 2025</p>
+  <h2 class="m-title" id="m-title">Pneumonia CNN</h2>
+  <p class="m-lead">Can usable diagnostic signal survive extreme downsampling of chest radiographs? I designed and trained a 105,281-parameter CNN on PneumoniaMNIST with no pretrained backbone and CPU-only compute to find out. I tuned it for recall, the metric that matters most in low-resource clinics.</p>
+  <div class="m-facts"><div><b>0.938</b><span>AUC</span></div><div><b>97.95%</b><span>sensitivity</span></div><div><b>87.82%</b><span>held-out test accuracy</span></div><div><b>105K</b><span>parameters</span></div></div>
+</template>
+
+<template id="t-polaris">
+  <p class="m-tag">Polaris Inc. · Research Head, ML for Drug Discovery (freelance) · 2025 – 2026</p>
+  <h2 class="m-title" id="m-title">Open-Source Tools</h2>
+  <p class="m-lead">Six open-source tools for computational biology and clinical ML.</p>
+  <ul class="m-list">
+    <li><strong>CellState:</strong> an 8-step single-cell RNA-seq pipeline.</li>
+    <li><strong>TinyMedVision:</strong> 3 CNNs tested against 6 corruption types, with 15 CI tests.</li>
+    <li><strong>ClinEval:</strong> 10+ clinical audit metrics for model evaluation.</li>
+    <li><strong>LysosomeLab:</strong> enrichment analysis.</li>
+    <li><strong>SecretomeBench:</strong> a 5-level evidence model for secretome claims.</li>
+  </ul>
+  <div class="m-links"><a class="solid" href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub ↗</a></div>
+</template>
+
+<template id="t-wearable">
+  <p class="m-tag">Conrad Innovation Challenge · 2025</p>
+  <h2 class="m-title" id="m-title">Safety Wearable</h2>
+  <p class="m-lead">I designed and pitched a multi-purpose wearable that addresses personal-safety gaps for women and underserved communities, and was named a Merit Scholar from a field of 6,000+ entrants.</p>
+</template>
+
+<template id="t-club">
+  <p class="m-tag">The International School Bangalore · 2024 – 2026</p>
+  <h2 class="m-title" id="m-title">Research Club</h2>
+  <p class="m-lead">Co-Founder and President of the school’s Research Club, and co-founder of Doctor’s Creed. I also founded OpenMed QA, an open-source medical supplies initiative (2024 – 2026).</p>
+</template>
+
+<template id="t-karnataka">
+  <p class="m-tag">Government of Karnataka · Office of the IT Minister · 2026</p>
+  <h2 class="m-title" id="m-title">AI Governance</h2>
+  <p class="m-lead">As a Policy Analyst &amp; Fellow, I assessed Karnataka’s AI governance framework across governance, public services, healthcare and startups.</p>
+</template>
+
+<template id="t-clpr">
+  <p class="m-tag">Centre for Law &amp; Policy Research · Apr – May 2023</p>
+  <h2 class="m-title" id="m-title">Marriage Equality</h2>
+  <p class="m-lead">Analysed Articles 14, 15, 19 and 21 of the Constitution of India under Adv. Jayna Kothari during the 2023 marriage-equality proceedings.</p>
+</template>
+
+<template id="t-isec">
+  <p class="m-tag">Institute for Social &amp; Economic Change · Apr – Jun 2024</p>
+  <h2 class="m-title" id="m-title">ISEC</h2>
+  <p class="m-lead">Synthesised 100+ publications and government reports under Prof. Krishna Raj, and authored two works: one on population growth, one on currency digitisation.</p>
+</template>
+
+<template id="t-violin">
+  <p class="m-tag">Music · Violin</p>
+  <h2 class="m-title" id="m-title">First Chair Violin</h2>
+  <p class="m-lead">First chair across 150+ orchestral concerts and recitals. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7, with Distinctions at Grades 2 and 5.</p>
+</template>
+
+<script>
+  /* ---------- Microscope portrait: two-channel vesicles, colour on hover ---------- */
+  (function () {
+    var c = document.getElementById('cells'); if (!c) return;
+    var x = c.getContext('2d'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var S, pts = [];
+    function size() {
+      var d = Math.min(devicePixelRatio || 1, 2); S = c.clientWidth || 340;
+      c.width = S * d; c.height = S * d; x.setTransform(d, 0, 0, d, 0, 0);
+      pts = [];
+      for (var i = 0; i < 70; i++) {
+        var a = Math.random() * 6.283, r = Math.sqrt(Math.random()) * S * .44;
+        var px = S / 2 + Math.cos(a) * r, py = S / 2 + Math.sin(a) * r, rad = 3 + Math.random() * 8;
+        var pair = Math.random() < .5;
+        pts.push({ x: px, y: py, r: rad, c: pair ? 'r' : (Math.random() < .5 ? 'r' : 'g'), vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22, p: Math.random() * 6.28 });
+        if (pair) pts.push({ r: rad * .9, c: 'g', link: pts.length - 1, p: Math.random() * 6.28 });
+      }
+    }
+    function frame(t) {
+      x.globalCompositeOperation = 'source-over'; x.fillStyle = '#050608'; x.fillRect(0, 0, S, S);
+      // faint cell outline
+      x.strokeStyle = 'rgba(120,140,170,.18)'; x.lineWidth = 1.5; x.beginPath(); x.ellipse(S / 2, S / 2, S * .46, S * .42, .3, 0, 6.283); x.stroke();
+      x.globalCompositeOperation = 'lighter';
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        if (p.link !== undefined) { var q = pts[p.link]; p.x = q.x + Math.sin(t / 1300 + i) * 2; p.y = q.y + Math.cos(t / 1500 + i) * 2; }
+        else if (!reduce) {
+          p.x += p.vx; p.y += p.vy;
+          var dx = p.x - S / 2, dy = p.y - S / 2; if (dx * dx + dy * dy > (S * .44) * (S * .44)) { p.vx *= -1; p.vy *= -1; }
+        }
+        var al = .55 + .35 * Math.sin(t / 900 + p.p), col = p.c === 'r' ? '255,55,115' : '40,225,140';
+        var g = x.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 2.4);
+        g.addColorStop(0, 'rgba(' + col + ',' + al + ')'); g.addColorStop(1, 'rgba(' + col + ',0)');
+        x.fillStyle = g; x.beginPath(); x.arc(p.x, p.y, p.r * 2.4, 0, 6.283); x.fill();
+      }
+      if (!reduce) requestAnimationFrame(frame);
+    }
+    size(); addEventListener('resize', function () { size(); if (reduce) frame(0); });
+    reduce ? frame(0) : requestAnimationFrame(frame);
+  })();
+
+  /* ---------- Detail panels ---------- */
+  (function () {
+    var modal = document.getElementById('modal'), body = document.getElementById('modal-body'), lastFocus = null;
+    function lock(on) { document.body.classList.toggle('locked', on); }
+    function openModal(key) {
+      var t = document.getElementById('t-' + key); if (!t) return;
+      lastFocus = document.activeElement;
+      body.innerHTML = ''; body.appendChild(t.content.cloneNode(true));
+      modal.hidden = false; modal.classList.add('open'); modal.scrollTop = 0; lock(true);
+      modal.querySelector('.modal-close').focus();
+      if (location.hash !== '#' + key) history.replaceState(null, '', '#' + key);
+    }
+    function closeModal() {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open'); modal.hidden = true; body.innerHTML = ''; lock(false);
+      history.replaceState(null, '', location.pathname + location.search);
+      if (lastFocus) lastFocus.focus();
+    }
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.modal')) return;
+      var el = e.target.closest('[data-open]');
+      if (!el || e.target.closest('a')) return;
+      openModal(el.dataset.open);
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-open]')) { e.preventDefault(); e.target.click(); }
+      if (e.key === 'Escape') closeModal();
+    });
+    modal.addEventListener('click', function (e) { if (e.target === modal || e.target.closest('.modal-close')) closeModal(); });
+
+    document.querySelectorAll('.venture.clickable, .card.clickable, .life article.clickable, .pitem.clickable').forEach(function (c) {
+      var h = document.createElement('span'); h.className = 'hint'; h.textContent = 'View details';
+      (c.querySelector('.body') || c).appendChild(h);
+    });
+
+    var hk = location.hash.slice(1);
+    if (hk && document.getElementById('t-' + hk)) openModal(hk);
+  })();
+
+  /* ---------- Tabs, accordion, nav state, copy email ---------- */
+  (function () {
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        tabs.forEach(function (x) { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('on'); });
+        t.classList.add('on'); t.setAttribute('aria-selected', 'true');
+        document.getElementById(t.dataset.panel).classList.add('on');
+      });
+    });
+    var svcs = document.querySelectorAll('details.svc');
+    svcs.forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) svcs.forEach(function (o) { if (o !== d) o.open = false; }); }); });
+
+    var links = document.querySelectorAll('.pill');
+    var ids = ['top', 'about', 'ventures', 'work', 'experience', 'beyond', 'contact'];
+    addEventListener('scroll', function () {
+      var cur = 'top';
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight * 0.4) cur = id; });
+      links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('href') === '#' + cur); });
+    }, { passive: true });
+
+    var btn = document.getElementById('copyEmail'), txt = document.getElementById('emailText');
+    btn.addEventListener('click', function () {
+      function sel() { var r = document.createRange(); r.selectNodeContents(txt); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Press ⌘/Ctrl+C'; }
+      try { navigator.clipboard.writeText(txt.textContent).then(function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1600); }, sel); } catch (e) { sel(); }
+    });
+  })();
+</script>
+
+</body>
+</html>
