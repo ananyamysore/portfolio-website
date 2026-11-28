@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ananya Sukruta Mysore</title>
-<meta name="description" content="Ananya Sukruta Mysore is the CEO of AXIA, founder of Andora and Avera, and a bioinformatics student at UC San Diego working across biomedical AI, cell biology and health-technology policy.">
+<meta name="description" content="Ananya Sukruta Mysore is a serial founder: Andora at 14, OpenMed QA at 15, Zora at 17, and now CEO of AXIA. Bioinformatics at UC San Diego; Policy Fellow to Karnataka's IT Minister.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -117,7 +117,7 @@
   .venture p { font-size: 13px; color: var(--ink-2); max-width: 420px; }
   .venture.dark p { color: #c7c7c7; }
   .venture .foot-row { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-top: 24px; }
-  .venture .num { font-family: var(--display); font-weight: 200; font-size: 64px; line-height: .85; letter-spacing: -0.03em; }
+  .venture .num { font-family: var(--display); font-weight: 200; font-size: clamp(64px, 7vw, 96px); line-height: .85; letter-spacing: -0.03em; }
   .venture .num small { display: block; font-family: var(--text); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); margin-top: 8px; }
   .chips { display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; max-width: 55%; }
   .chips span { font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(0,0,0,.22); }
@@ -326,6 +326,47 @@
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   }
 </style>
+<style>
+  /* ---------- Huge numbers ---------- */
+  .stat .n { font-weight: 200; font-size: clamp(56px, 7.6vw, 108px); line-height: .9; letter-spacing: -0.04em; }
+  .stat .n sup { font-size: .38em; vertical-align: top; margin-left: 2px; letter-spacing: 0; }
+
+  /* Founded-at timeline */
+  .ages { padding-top: 64px; padding-bottom: 64px; }
+  .agegrid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
+  .age { padding: 22px 18px 26px 0; border-right: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  .age + .age { padding-left: 18px; }
+  .age:last-child { border-right: 0; }
+  .age .yrs { font-family: var(--display); font-weight: 200; font-size: clamp(88px, 11vw, 160px); line-height: .8; letter-spacing: -0.05em; background: var(--fade); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .age .k { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); }
+  .age h3 { font-family: var(--display); font-weight: 400; font-size: 20px; text-transform: uppercase; line-height: 1.05; }
+  .age p { font-size: 12px; color: var(--ink-2); }
+
+  /* Mega number band */
+  .mega { background: var(--ink); color: #fff; padding-top: 64px; padding-bottom: 64px; border-top: 0; }
+  .mega .sec-head p { color: #9a9a9a; }
+  .mega .big { background: var(--fade-light); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mgrid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2c2c2c; border-left: 1px solid #2c2c2c; }
+  .mnum { padding: 30px 24px 26px; border-right: 1px solid #2c2c2c; border-bottom: 1px solid #2c2c2c; min-width: 0; }
+  .mnum .n { font-family: var(--display); font-weight: 200; font-size: clamp(64px, 8.6vw, 132px); line-height: .85; letter-spacing: -0.045em; background: var(--fade-light); -webkit-background-clip: text; background-clip: text; color: transparent; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .mnum .l { margin-top: 16px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #fff; }
+  .mnum .s { margin-top: 3px; font-size: 11px; color: #8f8f8f; }
+
+  @media (max-width: 1060px) {
+    .agegrid { grid-template-columns: repeat(3, 1fr); }
+    .age:nth-child(3) { border-right: 0; }
+    .age:nth-child(4) { padding-left: 0; }
+    .age:nth-child(n+4) { border-top: 1px solid var(--line); }
+    .mgrid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .agegrid { grid-template-columns: 1fr; }
+    .age, .age + .age { display: grid; grid-template-columns: 130px minmax(0, 1fr); column-gap: 18px; padding: 18px 0; border-right: 0; border-top: 1px solid var(--line); }
+    .age:first-child { border-top: 0; }
+    .age .yrs { grid-row: 1 / span 3; font-size: 104px; }
+    .mgrid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
@@ -358,7 +399,7 @@
       <a class="circ" href="https://www.linkedin.com/in/ananya-sukruta-mysore-547a15292" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#in"/></svg></a>
       <a class="circ" href="https://github.com/ananyamysore" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#gh"/></svg></a>
       <a class="circ" href="#contact" aria-label="Email"><svg><use href="#mail"/></svg></a>
-      <a class="circ" href="#services" aria-label="What I do"><svg><use href="#bars"/></svg></a>
+      <a class="circ" href="#numbers" aria-label="By the numbers"><svg><use href="#bars"/></svg></a>
     </div>
   </header>
 
@@ -368,7 +409,7 @@
       <h1 class="fade"><span class="l1">Ananya Sukruta</span><span class="l2">Mysore.</span></h1>
       <div class="hero-grid">
         <div class="hero-left">
-          <p>Founder · AXIA, Andora &amp; Avera<br>Bioinformatics · UC San Diego</p>
+          <p>Serial Founder · AXIA, Andora, Zora<br>Bioinformatics · UC San Diego</p>
           <a class="arrow" href="#ventures" aria-label="See my ventures"><svg><use href="#arr"/></svg></a>
         </div>
         <!-- To use a photo instead: replace the canvas with <img src="me.jpg" alt="Portrait of Ananya Sukruta Mysore"> -->
@@ -377,13 +418,13 @@
           <div class="scale"><span></span>5 µm</div>
         </div>
         <div class="hero-right">
-          <p class="claim">I build biomedical AI that has to hold up in the clinic, and I do the cell biology underneath it.</p>
+          <p class="claim">Five companies before twenty. I build biomedical AI, the agents that run on live software, and the policy that lets both ship.</p>
           <ul>
             <li>Biomedical AI</li>
+            <li>RL Environments</li>
             <li>Clinical Machine Learning</li>
             <li>Cell &amp; Molecular Biology</li>
-            <li>RL Environments</li>
-            <li>Health-Tech Policy</li>
+            <li>AI Policy</li>
           </ul>
         </div>
       </div>
@@ -394,30 +435,45 @@
       <div class="about-top">
         <div class="big-wrap">
           <h2 class="big fade">About</h2>
-          <a class="arrow sm" href="#ventures" aria-label="Next"><svg><use href="#arr"/></svg></a>
+          <a class="arrow sm" href="#ages" aria-label="Next"><svg><use href="#arr"/></svg></a>
         </div>
         <p class="quote">
-          “Ananya Sukruta Mysore is a three-time founder and a bioinformatics student at UC San Diego. As CEO of AXIA she builds
-          self-updating training environments for AI agents, with pilots at PhonePe, Infosys and Qualcomm. She founded Andora, a
-          predictive-medicine platform, and is building Avera in biodefense. At the Indian Institute of Science she was named an
-          Outstanding Scholar for her research on insulin-cell vesicle trafficking.”
+          “Ananya Sukruta Mysore founded Andora at 14 and took it 0→1 to a $728K+ quarterly pipeline. She started OpenMed QA at 15
+          and Zora at 17, and is now CEO of AXIA, with pilots at PhonePe, Infosys and Qualcomm. At 18 she became Policy Fellow to
+          Karnataka’s IT Minister and a KDEM Fellow, the youngest representative of the startup division in India. She studies
+          bioinformatics at UC San Diego.”
         </p>
       </div>
       <div class="stats">
-        <div class="stat"><div class="n">3</div><div class="l">Ventures Founded</div><div class="s">AXIA · Andora · Avera</div></div>
-        <div class="stat"><div class="n">0.91</div><div class="l">Held-out AUC</div><div class="s">type 2 diabetes progression model</div></div>
-        <div class="stat"><div class="n">1/31</div><div class="l">RSI-India Scholars</div><div class="s">Outstanding Scholar, IISc</div></div>
-        <div class="stat"><div class="n">25K+</div><div class="l">Elders Reached</div><div class="s">through Project Nightingale</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">Ventures Founded</div><div class="s">AXIA · Andora · Zora · OpenMed QA · Avera</div></div>
+        <div class="stat"><div class="n">14</div><div class="l">Age at First Company</div><div class="s">Andora, 2023</div></div>
+        <div class="stat"><div class="n">.91</div><div class="l">Held-out AUC</div><div class="s">diabetes progression model</div></div>
+        <div class="stat"><div class="n">1<sup>/31</sup></div><div class="l">RSI-India, Globally</div><div class="s">Outstanding Scholar · ~0.6% acceptance</div></div>
       </div>
     </section>
 
     <!-- ============ MARQUEE ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="track">
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Advised by Amazon &amp; Microsoft leaders</span><span>EWOR</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Accepted · Journal of Emerging Investigators</span>
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Advised by Amazon &amp; Microsoft leaders</span><span>EWOR</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Accepted · Journal of Emerging Investigators</span>
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span>
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span>
       </div>
     </div>
+
+    <!-- ============ FOUNDED AT ============ -->
+    <section class="ages pad" id="ages">
+      <div class="sec-head">
+        <h2 class="big fade">Founded At</h2>
+        <p>Four years, five companies, one government fellowship.</p>
+      </div>
+      <div class="agegrid">
+        <div class="age clickable" data-open="andora" tabindex="0" role="button"><span class="yrs">14</span><span class="k">2023 · Founder</span><h3>Andora</h3><p>Predictive medicine, 0→1 to a $728K+ quarterly pipeline.</p></div>
+        <div class="age clickable" data-open="openmed" tabindex="0" role="button"><span class="yrs">15</span><span class="k">2024 · Founder</span><h3>OpenMed QA</h3><p>120+ open-source medical-supply designs for an 86-country network.</p></div>
+        <div class="age clickable" data-open="zora" tabindex="0" role="button"><span class="yrs">17</span><span class="k">2026 · Founder &amp; CEO</span><h3>Zora</h3><p>Growth and marketing for 100+ small businesses across Asia.</p></div>
+        <div class="age clickable" data-open="axia" tabindex="0" role="button"><span class="yrs">18</span><span class="k">2026 · Co-Founder &amp; CEO</span><h3>AXIA</h3><p>Live RL environments for AI agents. Pilots at PhonePe, Infosys, Qualcomm.</p></div>
+        <div class="age clickable" data-open="karnataka" tabindex="0" role="button"><span class="yrs">18</span><span class="k">2026 · Fellow</span><h3>Govt. of Karnataka</h3><p>Policy Fellow to the IT Minister; youngest KDEM startup representative in India.</p></div>
+      </div>
+    </section>
 
     <!-- ============ VENTURES ============ -->
     <section class="ventures pad" id="ventures">
@@ -427,21 +483,48 @@
       </div>
       <div class="vgrid">
         <article class="venture dark clickable" data-open="axia" tabindex="0" role="button">
-          <div class="top"><span class="tag">Co-Founder &amp; CEO · 2026 –</span><span class="live">Pilots live</span></div>
+          <div class="top"><span class="tag">Andorr Corp. · Co-Founder &amp; CEO · Jun 2026 –</span><span class="live">Pilots live</span></div>
           <h3>AXIA</h3>
-          <p>Self-updating reinforcement-learning environments for training AI agents. They run real enterprise software and repair themselves with every upstream release.</p>
+          <p>Self-updating reinforcement-learning environments for training AI agents on live enterprise software. Agents should learn on what’s live, not on yesterday’s snapshot.</p>
           <div class="foot-row">
-            <div class="num">RL<small>agents · living environments · verifiers</small></div>
+            <div class="num">3<small>enterprise pilots</small></div>
             <div class="chips"><span>PhonePe</span><span>Infosys</span><span>Qualcomm</span></div>
           </div>
         </article>
         <article class="venture clickable" data-open="andora" tabindex="0" role="button">
-          <div class="top"><span class="tag">Founder · 2023 –</span><span class="live">Building</span></div>
+          <div class="top"><span class="tag">Founder · founded at 14 · Apr 2023 –</span><span class="live">Building</span></div>
           <h3>Andora</h3>
-          <p>A predictive-medicine platform. Taken from 0→1 through 86+ discovery conversations across 5 sectors and 11 product iterations.</p>
+          <p>A predictive-medicine platform built 0→1: 86 discovery conversations across 5 sectors, 13 enterprise pilots and 11 product iterations.</p>
           <div class="foot-row">
-            <div class="num">$728K<small>quarterly pipeline · 13 pilot opportunities</small></div>
+            <div class="num">$728K+<small>quarterly pipeline</small></div>
             <div class="chips"><span>XGBoost</span><span>EHR</span><span>Risk models</span></div>
+          </div>
+        </article>
+        <article class="venture clickable" data-open="zora" tabindex="0" role="button">
+          <div class="top"><span class="tag">Andorr Corp. · Founder &amp; CEO · Mar 2026 –</span><span class="live">Live</span></div>
+          <h3>Zora</h3>
+          <p>A brand and growth agency for small businesses and mom-and-pop stores: outreach, retention and lower acquisition costs.</p>
+          <div class="foot-row">
+            <div class="num">100+<small>businesses across Asia</small></div>
+            <div class="chips"><span>Growth</span><span>Retention</span><span>CAC</span></div>
+          </div>
+        </article>
+        <article class="venture dark clickable" data-open="openmed" tabindex="0" role="button">
+          <div class="top"><span class="tag">Founder · founded at 15 · 2024 – 2026</span><span class="live">OSMS network</span></div>
+          <h3>OpenMed QA</h3>
+          <p>Quality assurance for open-source medical supplies, built with Open Source Medical Supplies: design traceability, fabrication consistency and supply readiness.</p>
+          <div class="foot-row">
+            <div class="num">120+<small>designs catalogued · 86 countries</small></div>
+            <div class="chips"><span>Open hardware</span><span>QA</span></div>
+          </div>
+        </article>
+        <article class="venture dark clickable" data-open="nightingale" tabindex="0" role="button">
+          <div class="top"><span class="tag">Founder · Nightingales Medical Trust · 2023 – 2025</span><span class="live">Awarded</span></div>
+          <h3>Project Nightingale</h3>
+          <p>Dementia and geriatric care camps across 8+ care settings, with workflow changes that made every camp see more people, faster.</p>
+          <div class="foot-row">
+            <div class="num">25K+<small>elders · 60+ camps · 500+ hours</small></div>
+            <div class="chips"><span>−22% wait</span><span>+18% screening</span></div>
           </div>
         </article>
         <article class="venture clickable" data-open="avera" tabindex="0" role="button">
@@ -453,15 +536,22 @@
             <div class="chips"><span>Biosecurity</span><span>AI</span></div>
           </div>
         </article>
-        <article class="venture dark clickable" data-open="nightingale" tabindex="0" role="button">
-          <div class="top"><span class="tag">Founder · 2023 – 2025 · Nightingales Medical Trust</span><span class="live">Impact</span></div>
-          <h3>Project Nightingale</h3>
-          <p>Dementia and geriatric screening camps for elders. Workflow changes I coordinated cut wait times by 22% and raised screening rates by 18%.</p>
-          <div class="foot-row">
-            <div class="num">25K+<small>elders · 60+ camps · 500+ hours</small></div>
-            <div class="chips"><span>Dementia</span><span>Geriatric care</span></div>
-          </div>
-        </article>
+      </div>
+    </section>
+
+    <!-- ============ BY THE NUMBERS ============ -->
+    <section class="mega pad" id="numbers">
+      <div class="sec-head">
+        <h2 class="big">By the Numbers</h2>
+        <p>Every figure here comes from shipped work, a lab notebook or a held-out test set.</p>
+      </div>
+      <div class="mgrid">
+        <div class="mnum"><div class="n">$728K+</div><div class="l">Quarterly pipeline</div><div class="s">Andora, built 0→1 from age 14</div></div>
+        <div class="mnum"><div class="n">25,000+</div><div class="l">Elders reached</div><div class="s">Project Nightingale dementia care</div></div>
+        <div class="mnum"><div class="n">8,437</div><div class="l">Patient records screened</div><div class="s">Andora predictive medicine</div></div>
+        <div class="mnum"><div class="n">127+</div><div class="l">ML models benchmarked</div><div class="s">sensitivity · specificity · latency · cost</div></div>
+        <div class="mnum"><div class="n">97.95%</div><div class="l">Sensitivity</div><div class="s">105K-parameter CPU-only pneumonia CNN</div></div>
+        <div class="mnum"><div class="n">150+</div><div class="l">Concerts</div><div class="s">first chair violin, 11+ years</div></div>
       </div>
     </section>
 
@@ -473,38 +563,38 @@
       </div>
       <div class="svc-list">
         <details class="svc" open>
-          <summary><span class="n">1</span><span class="label">Clinical Machine Learning</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <summary><span class="n">1</span><span class="label">AI Agents &amp; RL Environments</span><span class="go"><svg><use href="#right"/></svg></span></summary>
           <div class="svc-body">
-            <p>Longitudinal risk models on patient records, a CPU-only CNN for chest radiographs, and evaluation tooling that audits clinical models for sensitivity, specificity and robustness.</p>
+            <p>At AXIA: living environments built on real enterprise software that re-validate themselves on every upstream release, and verifiers hardened against reward hacking by models told to cheat.</p>
+            <ul><li><span>ERPNext</span><span>First environment</span></li><li><span>Verifiers</span><span>Hack-tested</span></li><li><span>Pilots</span><span>PhonePe · Infosys · Qualcomm</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">2</span><span class="label">Clinical Machine Learning</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>Longitudinal risk models on patient records, a CPU-only CNN for chest radiographs, and open-source tools that audit clinical models for robustness.</p>
             <ul><li><span>T2D progression</span><span>0.91 AUC</span></li><li><span>Pneumonia CNN</span><span>0.938 AUC</span></li><li><span>ClinEval</span><span>10+ audit metrics</span></li></ul>
           </div>
         </details>
         <details class="svc">
-          <summary><span class="n">2</span><span class="label">Cell &amp; Molecular Biology</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <summary><span class="n">3</span><span class="label">Cell &amp; Molecular Biology</span><span class="go"><svg><use href="#right"/></svg></span></summary>
           <div class="svc-body">
-            <p>Mammalian cell culture, plasmid transfection and secretome work, from insulin-secreting β-cells at IISc to mesenchymal stem cells at HCG Hospitals.</p>
-            <ul><li><span>Transfection</span><span>Turbofect</span></li><li><span>ELISA · PCR</span><span>Cytokines</span></li><li><span>SDS-PAGE · MTT</span><span>Viability</span></li></ul>
+            <p>Mammalian cell culture, transfection and secretome engineering, from insulin-secreting β-cells at IISc to stem cells at HCG Hospitals.</p>
+            <ul><li><span>Wet-lab techniques</span><span>7+</span></li><li><span>ELISA · PCR</span><span>Cytokines</span></li><li><span>SDS-PAGE · MTT</span><span>Viability</span></li></ul>
           </div>
         </details>
         <details class="svc">
-          <summary><span class="n">3</span><span class="label">Quantitative Imaging</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <summary><span class="n">4</span><span class="label">Quantitative Imaging</span><span class="go"><svg><use href="#right"/></svg></span></summary>
           <div class="svc-body">
             <p>Live-cell confocal microscopy and colocalisation statistics. I turn images of vesicles into numbers that survive a t-test.</p>
-            <ul><li><span>Confocal</span><span>Nikon Ti2 · 100×</span></li><li><span>Fiji / JACoP</span><span>Pearson’s · Manders’</span></li><li><span>Statistics</span><span>Two-tailed t-tests</span></li></ul>
+            <ul><li><span>Confocal</span><span>Nikon Ti2 · 100×</span></li><li><span>Fiji / JACoP</span><span>Pearson’s · Manders’</span></li><li><span>Statistics</span><span>p &lt; 0.001</span></li></ul>
           </div>
         </details>
         <details class="svc">
-          <summary><span class="n">4</span><span class="label">AI Agents &amp; RL Environments</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <summary><span class="n">5</span><span class="label">AI Policy &amp; Governance</span><span class="go"><svg><use href="#right"/></svg></span></summary>
           <div class="svc-body">
-            <p>At AXIA: living environments built on real enterprise software, and verifiers hardened against reward hacking by models told to cheat.</p>
-            <ul><li><span>ERPNext</span><span>First environment</span></li><li><span>Verifiers</span><span>Hack-tested</span></li><li><span>Pilots</span><span>3 enterprises</span></li></ul>
-          </div>
-        </details>
-        <details class="svc">
-          <summary><span class="n">5</span><span class="label">Health-Tech Policy</span><span class="go"><svg><use href="#right"/></svg></span></summary>
-          <div class="svc-body">
-            <p>AI governance for public services and healthcare with the Government of Karnataka, plus constitutional and economic research.</p>
-            <ul><li><span>Govt. of Karnataka</span><span>AI framework</span></li><li><span>CLPR</span><span>Constitutional law</span></li><li><span>ISEC</span><span>2 authored works</span></li></ul>
+            <p>State-level AI adoption with the Government of Karnataka, including its proposed collaboration with Anthropic, plus constitutional and economic research.</p>
+            <ul><li><span>IT Minister’s Office</span><span>Policy Fellow</span></li><li><span>KDEM</span><span>Startup division</span></li><li><span>CLPR · ISEC</span><span>Law &amp; economics</span></li></ul>
           </div>
         </details>
       </div>
@@ -525,15 +615,15 @@
       <div class="panel on" id="p-research" role="tabpanel">
         <article class="card dark clickable" data-open="rab11a" tabindex="0" role="button">
           <p class="tag">Indian Institute of Science · RSI-India 2025</p>
-          <h3>Rab11a &amp; Vesicle Trafficking in β-Cells</h3>
-          <p>Does Rab11a position multivesicular bodies in insulin-secreting cells? Dominant-negative Rab11a says yes.</p>
+          <h3>Rab11a &amp; Vesicle Trafficking in Type 2 Diabetes</h3>
+          <p>Asia’s first study of its kind: does Rab11a position multivesicular bodies in insulin-secreting β-cells? Dominant-negative Rab11a says yes.</p>
           <div class="huge">0.91→0.71<small>Pearson’s r, WT vs S25N · p &lt; 0.001</small></div>
         </article>
         <article class="card clickable" data-open="secretome" tabindex="0" role="button">
-          <p class="tag">HCG Hospitals · Accepted, JEI</p>
-          <h3>Plant-Based MSC Secretome</h3>
-          <p>India’s first plant-based stem-cell secretome platform, a cell-free candidate therapy for autoimmune disease.</p>
-          <ul class="mini"><li><span>Markers</span><span>IL-6 · IDO · IFN-γ · TNF-α</span></li><li><span>Timepoints</span><span>24 · 48 · 72 h</span></li></ul>
+          <p class="tag">HCG Hospitals · Lead Engineer · Accepted, JEI</p>
+          <h3>Plant-Based Stem-Cell Secretome</h3>
+          <p>India’s first plant-based solution for chronic inflammation: a cell-free secretome platform for autoimmune disease.</p>
+          <ul class="mini"><li><span>Duration</span><span>21 months</span></li><li><span>Techniques</span><span>7+</span></li></ul>
         </article>
         <article class="card clickable" data-open="autophagy" tabindex="0" role="button">
           <p class="tag">Scientific Review · Under review, IJHSR</p>
@@ -561,7 +651,7 @@
           <h3>Six Open-Source Tools</h3>
           <p>From an 8-step single-cell RNA-seq pipeline to a 5-level evidence model for secretome claims.</p>
           <a class="xlink" href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub ↗</a>
-          <ul class="mini"><li><span>CellState</span><span>scRNA-seq</span></li><li><span>TinyMedVision</span><span>15 CI tests</span></li></ul>
+          <ul class="mini"><li><span>TinyMedVision</span><span>15 CI tests</span></li><li><span>CellState</span><span>scRNA-seq</span></li></ul>
         </article>
       </div>
 
@@ -570,19 +660,19 @@
           <p class="tag">Nightingales Medical Trust · Founder</p>
           <h3>Project Nightingale</h3>
           <p>Dementia and geriatric camps, with workflow changes that made screening faster and more complete.</p>
-          <div class="huge">−22%<small>wait times · +18% screening rates</small></div>
+          <div class="huge">−22%<small>wait times · +30% participation</small></div>
+        </article>
+        <article class="card clickable" data-open="openmed" tabindex="0" role="button">
+          <p class="tag">Open Source Medical Supplies · Founder</p>
+          <h3>OpenMed QA</h3>
+          <p>A framework for cataloguing open-source medical-supply designs with reproducibility and distribution-readiness checks.</p>
+          <ul class="mini"><li><span>Designs</span><span>120+</span></li><li><span>Network</span><span>86 countries</span></li></ul>
         </article>
         <article class="card clickable" data-open="wearable" tabindex="0" role="button">
           <p class="tag">Conrad Innovation Challenge · Merit Scholar</p>
           <h3>Multi-Purpose Safety Wearable</h3>
           <p>Designed and pitched a wearable for personal safety, built for women and underserved communities.</p>
           <ul class="mini"><li><span>Field</span><span>6,000+ entrants</span></li><li><span>Year</span><span>2025</span></li></ul>
-        </article>
-        <article class="card clickable" data-open="club" tabindex="0" role="button">
-          <p class="tag">Co-Founder &amp; President</p>
-          <h3>Research Club &amp; Doctor’s Creed</h3>
-          <p>Started a student research club at TISB and co-founded Doctor’s Creed. Also founded OpenMed QA for open-source medical supplies.</p>
-          <ul class="mini"><li><span>School</span><span>TISB</span></li><li><span>Years</span><span>2024 – 2026</span></li></ul>
         </article>
       </div>
     </section>
@@ -594,40 +684,40 @@
         <p>Labs, hospitals and government offices where I’ve done the work.</p>
       </div>
       <div class="rows">
+        <div class="row clickable" data-open="karnataka" tabindex="0" role="button">
+          <h3>Govt. of Karnataka</h3>
+          <p class="what"><b>Policy Analyst &amp; Fellow · Office of the IT Minister</b>Analysed the state’s AI governance framework and its proposed collaboration with Anthropic across governance, public services, healthcare and startups.</p>
+          <span class="when">Jul – Sep 2026</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
+        <div class="row clickable" data-open="karnataka" tabindex="0" role="button">
+          <h3>KDEM</h3>
+          <p class="what"><b>Fellow · Karnataka Digital Economy Mission</b>The youngest representative of the startup division in India.</p>
+          <span class="when">2026</span>
+          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
+        </div>
         <div class="row clickable" data-open="rab11a" tabindex="0" role="button">
           <h3>IISc</h3>
-          <p class="what"><b>Research Scholar · RSI-India, inaugural cohort</b>Live-cell imaging of Rab11a-dependent MVB trafficking in pancreatic β-cells under Dr. Nikhil Gandasi. Named Outstanding Scholar.</p>
+          <p class="what"><b>Research Scholar · RSI-India, inaugural cohort</b>Led Asia’s first study of its kind on Rab11a trafficking in type 2 diabetes under Dr. Nikhil Gandasi. Named Outstanding Scholar.</p>
           <span class="when">Summer 2025</span>
           <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
         </div>
         <div class="row clickable" data-open="secretome" tabindex="0" role="button">
           <h3>HCG Hospitals</h3>
-          <p class="what"><b>Cellular Engineering Intern · Regenerative Medicine</b>Led the experimental pipeline for a plant-based MSC secretome platform under Dr. Jyothsna Rao, Research Director, ISSL.</p>
+          <p class="what"><b>Lead Engineer · Regenerative Medicine</b>Led the engineering team behind India’s first plant-based stem-cell secretome platform under Dr. Jyothsna Rao.</p>
           <span class="when">2024 – 2025</span>
-          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
-        </div>
-        <div class="row clickable" data-open="karnataka" tabindex="0" role="button">
-          <h3>Govt. of Karnataka</h3>
-          <p class="what"><b>Policy Analyst &amp; Fellow · Office of the IT Minister</b>Assessed the state’s AI governance framework across public services, healthcare and startups.</p>
-          <span class="when">2026</span>
           <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
         </div>
         <div class="row clickable" data-open="polaris" tabindex="0" role="button">
           <h3>Polaris Inc.</h3>
-          <p class="what"><b>Research Head · ML for Drug Discovery (freelance)</b>Built six open-source tools for single-cell analysis, medical vision robustness and clinical model audits.</p>
+          <p class="what"><b>Research Head · ML for Drug Discovery</b>Shipped six open-source computational-biology and clinical-ML tools.</p>
           <span class="when">2025 – 2026</span>
           <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
         </div>
         <div class="row clickable" data-open="clpr" tabindex="0" role="button">
-          <h3>CLPR</h3>
-          <p class="what"><b>Project Intern · Centre for Law &amp; Policy Research</b>Constitutional analysis of Articles 14, 15, 19 and 21 for the marriage-equality proceedings, under Adv. Jayna Kothari.</p>
-          <span class="when">Apr – May 2023</span>
-          <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
-        </div>
-        <div class="row clickable" data-open="isec" tabindex="0" role="button">
-          <h3>ISEC</h3>
-          <p class="what"><b>Project Intern · Institute for Social &amp; Economic Change</b>Synthesised 100+ sources under Prof. Krishna Raj and authored two works on population growth and currency digitisation.</p>
-          <span class="when">Apr – Jun 2024</span>
+          <h3>CLPR · ISEC</h3>
+          <p class="what"><b>Project Intern · Law &amp; Economics</b>Constitutional analysis for the marriage-equality proceedings, and two authored works on population growth and currency digitisation.</p>
+          <span class="when">2023 – 2024</span>
           <span class="arrow sm" aria-hidden="true"><svg><use href="#arr"/></svg></span>
         </div>
       </div>
@@ -671,14 +761,14 @@
       </div>
       <div class="hlist">
         <div class="hrow"><span class="yr">2025</span><h3>RCSU Science Challenge, Imperial College</h3><p>2nd place worldwide · 2,000+ entrants</p></div>
-        <div class="hrow"><span class="yr">2025</span><h3>Outstanding Scholar, RSI-India</h3><p>Indian Institute of Science · 1 of 31</p></div>
+        <div class="hrow"><span class="yr">2025</span><h3>Outstanding Scholar, RSI-India</h3><p>1 of 31 globally · ~0.6% acceptance</p></div>
+        <div class="hrow"><span class="yr">Care</span><h3>Karnataka Rajyotsava Award</h3><p>Project Nightingale</p></div>
+        <div class="hrow"><span class="yr">Care</span><h3>International Research Award for Dementia Care</h3><p>Project Nightingale</p></div>
+        <div class="hrow"><span class="yr">Care</span><h3>Namma Bengaluru Award · Rotary Pioneer Award</h3><p>Project Nightingale</p></div>
         <div class="hrow"><span class="yr">2025</span><h3>British Biology Olympiad</h3><p>High Commendation · Top 3% of 180,000+</p></div>
         <div class="hrow"><span class="yr">2025</span><h3>Conrad Innovation Challenge</h3><p>Merit Scholar · 6,000+ entrants</p></div>
         <div class="hrow"><span class="yr">2025</span><h3>Avogadro Exam, U. Waterloo</h3><p>Top 5% internationally</p></div>
         <div class="hrow"><span class="yr">2024</span><h3>CBSE Board Examinations</h3><p>National Rank #1 · French &amp; Social Science</p></div>
-        <div class="hrow"><span class="yr">2016–24</span><h3>Intl. English &amp; Math Olympiads</h3><p>Seven gold medals</p></div>
-        <div class="hrow"><span class="yr">2019</span><h3>NASTA Gold Medal of Excellence</h3><p>National Rank #75 · State Rank #3</p></div>
-        <div class="hrow"><span class="yr">2016</span><h3>ICAS, UNSW Global</h3><p>High Distinction · Top 1% of 1M+</p></div>
       </div>
     </section>
 
@@ -692,9 +782,9 @@
         <article class="clickable" data-open="violin" tabindex="0" role="button">
           <div class="visual"><span class="huge">150+</span><small>concerts &amp;<br>recitals</small></div>
           <div class="body">
-            <p class="tag">Music · Violin</p>
+            <p class="tag">Music · Violin · 11+ years</p>
             <h3>First Chair Violin</h3>
-            <p>First chair across 150+ orchestral concerts and recitals. Named to the ABRSM International Merit List at Grades 3, 6 and 7.</p>
+            <p>The youngest member of South Asia’s largest orchestra. Performed at Chowdiah Memorial Hall and Bangalore International Centre, and trained in masterclasses with Trinity Laban faculty.</p>
           </div>
         </article>
         <article class="clickable" data-open="nightingale" tabindex="0" role="button">
@@ -711,8 +801,8 @@
     <!-- ============ EDUCATION ============ -->
     <section class="edu pad">
       <div><p class="k">University</p><h3>UC San Diego</h3><p>B.S. Bioinformatics · Class of 2030</p></div>
-      <div><p class="k">Pre-university</p><h3>The International School Bangalore</h3><p>IB Diploma · HL Biology, Chemistry, Mathematics</p></div>
-      <div><p class="k">Further study</p><h3>Programming · RNA · Stem Cells · Epigenetics</h3><p>Harvard CS50P · Stanford Eterna · AMNH · University of Melbourne</p></div>
+      <div><p class="k">Pre-university</p><h3>The International School Bangalore</h3><p>IB Diploma · HL Biology, Chemistry, Mathematics · TISB ’26</p></div>
+      <div><p class="k">Research programme</p><h3>RSI-India ’25</h3><p>Indian Institute of Science, inaugural cohort</p></div>
     </section>
 
     <!-- ============ LET'S TALK ============ -->
@@ -721,7 +811,7 @@
         <a href="https://www.linkedin.com/in/ananya-sukruta-mysore-547a15292" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub</a>
         <a href="#ventures">AXIA</a>
-        <a href="#ventures">Andora</a>
+        <a href="#ventures">Zora</a>
         <a href="#work">Research</a>
         <a href="#publications">Publications</a>
       </div>
@@ -749,27 +839,48 @@
 </div>
 
 <template id="t-axia">
-  <p class="m-tag">Co-Founder &amp; Chief Executive Officer · 2026 – Present</p>
+  <p class="m-tag">Andorr Corp. · Co-Founder &amp; Chief Executive Officer · Jun 2026 – Present</p>
   <h2 class="m-title" id="m-title">AXIA</h2>
-  <p class="m-lead">AXIA builds self-updating reinforcement-learning environments for training AI agents. Static benchmarks go stale the moment the software they copy ships a new version. AXIA’s environments run the real thing and keep up with it.</p>
+  <p class="m-lead">AXIA builds self-updating reinforcement-learning environments for training AI agents on live enterprise software. Static benchmarks go stale the moment the software they copy ships a new version. AXIA’s environments run the real thing and keep up with it.</p>
   <div class="m-facts"><div><b>3</b><span>enterprise pilots: PhonePe, Infosys, Qualcomm</span></div><div><b>ERPNext</b><span>first live environment</span></div></div>
   <ul class="m-list">
-    <li>“Living” environments run real enterprise software, detect each upstream release, and automatically re-validate, repair or flag every training task.</li>
-    <li>Hack-tested verifiers: each is attacked by a model instructed to pass without doing the work, to eliminate reward hacking, the top quality concern AI labs cite.</li>
-    <li>Advised by leaders from Amazon and Microsoft and by EWOR Fellows.</li>
+    <li>“Living” environments run real enterprise software, detect every upstream release, and automatically re-validate, repair or flag each training task.</li>
+    <li>Hack-tested verifiers: each one is attacked by a model told to pass without doing the work, to kill reward hacking.</li>
+    <li>Mentored by Microsoft, Amazon and HP; advised by EWOR Fellows.</li>
     <li>I lead product, strategy, fundraising and go-to-market with co-founder and CTO Tanishi Dutt.</li>
   </ul>
 </template>
 
 <template id="t-andora">
-  <p class="m-tag">Founder · 2023 – Present</p>
+  <p class="m-tag">Founder · founded at 14 · Apr 2023 – Present · Bengaluru</p>
   <h2 class="m-title" id="m-title">Andora</h2>
-  <p class="m-lead">A predictive-medicine platform built to flag disease risk early enough to act on it.</p>
-  <div class="m-facts"><div><b>$728K</b><span>quarterly pipeline</span></div><div><b>13</b><span>enterprise pilot opportunities</span></div><div><b>86+</b><span>discovery conversations, 5 sectors</span></div><div><b>11</b><span>product iterations</span></div></div>
+  <p class="m-lead">A predictive-medicine platform built to flag disease risk early enough to act on it, taken from 0→1.</p>
+  <div class="m-facts"><div><b>$728K+</b><span>quarterly pipeline</span></div><div><b>13</b><span>enterprise pilots</span></div><div><b>86</b><span>discovery conversations, 5 sectors</span></div><div><b>52+</b><span>member network, 5 countries</span></div></div>
   <ul class="m-list">
-    <li>Screened 8,437 patient records and benchmarked 127+ ML models, biomedical datasets and computational tools on predictive performance, sensitivity, specificity, inference latency and compute cost.</li>
+    <li>Screened 8,437 patient records and benchmarked 127+ ML models, biomedical datasets and tools on predictive performance, sensitivity, specificity, inference latency and compute cost.</li>
+    <li>Shipped 11 product iterations, with ROI models projecting 18.4–31.7% compute savings.</li>
     <li>Built an XGBoost longitudinal model of type 2 diabetes progression: 0.91 held-out AUC, 84% sensitivity, 150+ features.</li>
-    <li>ROI models projecting 18.4–31.7% compute-cost reduction.</li>
+    <li>Grew a 52+ member international network of clinicians, biomedical researchers, biotech founders, investors and technology partners.</li>
+  </ul>
+</template>
+
+<template id="t-zora">
+  <p class="m-tag">Andorr Corp. · Founder &amp; CEO · founded at 17 · Mar 2026 – Present</p>
+  <h2 class="m-title" id="m-title">Zora</h2>
+  <p class="m-lead">Zora works where growth intelligence meets digital transformation. It is a brand and marketing agency that helps small businesses scale outreach, keep customers longer and spend less to win new ones.</p>
+  <div class="m-facts"><div><b>100+</b><span>businesses &amp; mom-and-pop stores across Asia</span></div></div>
+  <ul class="m-list">
+    <li>Technology-driven growth strategies focused on customer-lifecycle optimisation and engagement intelligence.</li>
+  </ul>
+</template>
+
+<template id="t-openmed">
+  <p class="m-tag">Founder · founded at 15 · with Open Source Medical Supplies · 2024 – 2026</p>
+  <h2 class="m-title" id="m-title">OpenMed QA</h2>
+  <p class="m-lead">Part of OSMS’s global response network, OpenMed QA addresses design traceability, fabrication consistency and local supply readiness for open-source medical supplies.</p>
+  <div class="m-facts"><div><b>120+</b><span>designs catalogued</span></div><div><b>86</b><span>countries in the OSMS network</span></div></div>
+  <ul class="m-list">
+    <li>Built a framework for cataloguing open-source medical-supply designs, with standardised manufacturing documentation, reproducibility checks and distribution-readiness assessments.</li>
   </ul>
 </template>
 
@@ -780,17 +891,34 @@
 </template>
 
 <template id="t-nightingale">
-  <p class="m-tag">Founder · Project Nightingale · Nightingales Medical Trust · 2023 – 2025</p>
+  <p class="m-tag">Founder · Project Nightingale · Nightingales Medical Trust · Mar 2023 – Nov 2025</p>
   <h2 class="m-title" id="m-title">Project Nightingale</h2>
-  <p class="m-lead">Dementia and geriatric camps for elders in Bengaluru. Beyond volunteering at the camps, I coordinated workflow changes that made each one see more people, faster.</p>
-  <div class="m-facts"><div><b>25K+</b><span>elders reached</span></div><div><b>60+</b><span>dementia &amp; geriatric camps</span></div><div><b>−22%</b><span>wait times</span></div><div><b>+18%</b><span>screening rates</span></div></div>
+  <p class="m-lead">I ran dementia and geriatric care camps for elders across 8+ care settings with a four-time award-winning organisation, and coordinated the workflow changes that made each camp see more people, faster.</p>
+  <div class="m-facts"><div><b>25K+</b><span>elders reached</span></div><div><b>60+</b><span>camps</span></div><div><b>500+</b><span>hours</span></div></div>
+  <div class="m-facts"><div><b>−22%</b><span>wait times</span></div><div><b>+18%</b><span>screening</span></div><div><b>+30%</b><span>participation</span></div><div><b>+15%</b><span>follow-up adherence</span></div></div>
+  <h3 class="m-h">Recognition</h3>
+  <ul class="m-list">
+    <li>Karnataka Rajyotsava Award</li>
+    <li>International Research Award for Dementia Care</li>
+    <li>Namma Bengaluru Award</li>
+    <li>Rotary Pioneer Award</li>
+  </ul>
+</template>
+
+<template id="t-karnataka">
+  <p class="m-tag">Government of Karnataka · Office of the IT Minister · Jul – Sep 2026 · age 18</p>
+  <h2 class="m-title" id="m-title">AI Governance</h2>
+  <p class="m-lead">As Policy Analyst &amp; Fellow, I analysed Karnataka’s AI governance framework and its proposed collaboration with Anthropic, across four domains: governance, public services, healthcare and startups. I assessed what responsible, state-level AI adoption would take in citizen services and government decision-making.</p>
+  <div class="m-facts"><div><b>4</b><span>policy domains</span></div><div><b>18</b><span>age at appointment</span></div></div>
+  <h3 class="m-h">KDEM Fellow</h3>
+  <p class="m-lead">Fellow with the Karnataka Digital Economy Mission, and the youngest representative of the startup division in India.</p>
 </template>
 
 <template id="t-rab11a">
   <p class="m-tag">Indian Institute of Science · RSI-India, inaugural cohort · Summer 2025</p>
   <h2 class="m-title" id="m-title">Rab11a in β-Cells</h2>
-  <p class="m-lead">I tested whether Rab11a activity is needed to position multivesicular bodies (MVBs) in INS-1 832/13 insulin-secreting cells. I co-expressed dsRed-Rab11a, either wild-type or the dominant-negative S25N mutant, with the MVB marker CD63-EGFP.</p>
-  <div class="m-facts"><div><b>1 of 31</b><span>scholars nationally, &lt;4% acceptance</span></div><div><b>15</b><span>cells per condition</span></div><div><b>p &lt; 0.001</b><span>two-tailed t-test</span></div></div>
+  <p class="m-lead">Asia’s first study of its kind on cellular trafficking in type 2 diabetes. I tested whether Rab11a activity is needed to position multivesicular bodies (MVBs) in INS-1 832/13 insulin-secreting cells. I co-expressed dsRed-Rab11a, either wild-type or the dominant-negative S25N mutant, with the MVB marker CD63-EGFP.</p>
+  <div class="m-facts"><div><b>1 of 31</b><span>selected globally, ~0.6% acceptance</span></div><div><b>15</b><span>cells per condition</span></div><div><b>p &lt; 0.001</b><span>two-tailed t-test</span></div></div>
   <h3 class="m-h">Colocalisation, wild-type vs S25N</h3>
   <div class="coloc" role="img" aria-label="Pearson's r fell from 0.91 to 0.71; Manders' M2 fell from 0.74 to 0.45.">
     <div class="b"><div><span>Pearson’s r · WT</span><span>0.91</span></div><div class="t"><div class="f" style="width:91%"></div></div></div>
@@ -803,20 +931,20 @@
     <li>Cell culture, coverslip seeding and Turbofect transient transfection.</li>
     <li>Live-cell confocal imaging on a Nikon Ti2 at 100× oil.</li>
     <li>Colocalisation in Fiji/JACoP (Pearson’s and Manders’ coefficients).</li>
-    <li>PI: Dr. Nikhil Gandasi · Mentor: Priyadarshini Veerabhadraswamy. I wrote and presented the final paper, and was named Outstanding Scholar of the cohort.</li>
+    <li>Advisor: Dr. Nikhil Gandasi. I authored and presented the paper, and was named Outstanding Scholar of the cohort.</li>
   </ul>
 </template>
 
 <template id="t-secretome">
-  <p class="m-tag">HCG Hospitals · Cellular Engineering Intern, Regenerative Medicine · 2024 – 2025</p>
+  <p class="m-tag">HCG Hospitals · Lead Engineer, Regenerative Medicine · Apr 2024 – Dec 2025</p>
   <h2 class="m-title" id="m-title">MSC Secretome</h2>
-  <p class="m-lead">I led the experimental pipeline for India’s first plant-based mesenchymal stem cell secretome platform, a cell-free candidate therapy for chronic autoimmune disease, under Dr. Jyothsna Rao, Research Director, ISSL.</p>
+  <p class="m-lead">I led the engineering team behind India’s first plant-based solution for chronic inflammation: a mesenchymal stem-cell secretome platform for autoimmune disease, under Dr. Jyothsna Rao, Research Director, ISSL.</p>
+  <div class="m-facts"><div><b>21</b><span>months</span></div><div><b>7+</b><span>wet-lab techniques</span></div><div><b>JEI</b><span>manuscript accepted</span></div></div>
   <ul class="m-list">
     <li>Compared MSCs grown in FBS against plant-based, xeno-free PLAY® medium, with and without inflammatory licensing, for IL-6 and IDO secretion.</li>
     <li>Measured secretome suppression of IFN-γ and TNF-α at 24, 48 and 72 h. PLAY-MSCs suppressed IFN-γ more than FBS-MSCs at every time point.</li>
-    <li>Techniques: cell culture, ELISA, PCR, SDS-PAGE, MTT viability and cytotoxicity assays.</li>
+    <li>Techniques: cell culture, ELISA, PCR, SDS-PAGE, MTT, cytotoxicity analysis and protein characterisation.</li>
   </ul>
-  <div class="m-facts"><div><b>JEI</b><span>manuscript accepted</span></div><div><b>3</b><span>timepoints: 24 · 48 · 72 h</span></div><div><b>4</b><span>cytokines and markers</span></div></div>
 </template>
 
 <template id="t-autophagy">
@@ -845,15 +973,15 @@
 </template>
 
 <template id="t-polaris">
-  <p class="m-tag">Polaris Inc. · Research Head, ML for Drug Discovery (freelance) · 2025 – 2026</p>
+  <p class="m-tag">Polaris Inc. · Research Head, ML for Drug Discovery (freelance) · Jul 2025 – Aug 2026</p>
   <h2 class="m-title" id="m-title">Open-Source Tools</h2>
-  <p class="m-lead">Six open-source tools for computational biology and clinical ML.</p>
+  <p class="m-lead">Six open-source computational-biology and clinical-ML tools.</p>
   <ul class="m-list">
+    <li><strong>TinyMedVision:</strong> 3 CNN architectures, 6 corruption types, 15 passing CI tests.</li>
     <li><strong>CellState:</strong> an 8-step single-cell RNA-seq pipeline.</li>
-    <li><strong>TinyMedVision:</strong> 3 CNNs tested against 6 corruption types, with 15 CI tests.</li>
-    <li><strong>ClinEval:</strong> 10+ clinical audit metrics for model evaluation.</li>
-    <li><strong>LysosomeLab:</strong> enrichment analysis.</li>
-    <li><strong>SecretomeBench:</strong> a 5-level evidence model for secretome claims.</li>
+    <li><strong>ClinEval:</strong> 10+ clinical evaluation and audit metrics.</li>
+    <li><strong>LysosomeLab:</strong> 4 enrichment-analysis areas.</li>
+    <li><strong>SecretomeBench:</strong> a 5-level evidence model.</li>
   </ul>
   <div class="m-links"><a class="solid" href="https://github.com/ananyamysore" target="_blank" rel="noopener">GitHub ↗</a></div>
 </template>
@@ -864,34 +992,21 @@
   <p class="m-lead">I designed and pitched a multi-purpose wearable that addresses personal-safety gaps for women and underserved communities, and was named a Merit Scholar from a field of 6,000+ entrants.</p>
 </template>
 
-<template id="t-club">
-  <p class="m-tag">The International School Bangalore · 2024 – 2026</p>
-  <h2 class="m-title" id="m-title">Research Club</h2>
-  <p class="m-lead">Co-Founder and President of the school’s Research Club, and co-founder of Doctor’s Creed. I also founded OpenMed QA, an open-source medical supplies initiative (2024 – 2026).</p>
-</template>
-
-<template id="t-karnataka">
-  <p class="m-tag">Government of Karnataka · Office of the IT Minister · 2026</p>
-  <h2 class="m-title" id="m-title">AI Governance</h2>
-  <p class="m-lead">As a Policy Analyst &amp; Fellow, I assessed Karnataka’s AI governance framework across governance, public services, healthcare and startups.</p>
-</template>
-
 <template id="t-clpr">
-  <p class="m-tag">Centre for Law &amp; Policy Research · Apr – May 2023</p>
-  <h2 class="m-title" id="m-title">Marriage Equality</h2>
-  <p class="m-lead">Analysed Articles 14, 15, 19 and 21 of the Constitution of India under Adv. Jayna Kothari during the 2023 marriage-equality proceedings.</p>
-</template>
-
-<template id="t-isec">
-  <p class="m-tag">Institute for Social &amp; Economic Change · Apr – Jun 2024</p>
-  <h2 class="m-title" id="m-title">ISEC</h2>
-  <p class="m-lead">Synthesised 100+ publications and government reports under Prof. Krishna Raj, and authored two works: one on population growth, one on currency digitisation.</p>
+  <p class="m-tag">Law &amp; Economics · 2023 – 2024</p>
+  <h2 class="m-title" id="m-title">CLPR · ISEC</h2>
+  <p class="m-lead"><strong>Centre for Law &amp; Policy Research (Apr – May 2023):</strong> analysed Articles 14, 15, 19 and 21 of the Constitution of India under Adv. Jayna Kothari during the marriage-equality proceedings.</p>
+  <p class="m-lead"><strong>Institute for Social &amp; Economic Change (Apr – Jun 2024):</strong> synthesised 100+ publications and government reports under Prof. Krishna Raj, and authored two works on population growth and currency digitisation.</p>
 </template>
 
 <template id="t-violin">
-  <p class="m-tag">Music · Violin</p>
+  <p class="m-tag">Music · Violin · Apr 2014 – Nov 2025</p>
   <h2 class="m-title" id="m-title">First Chair Violin</h2>
-  <p class="m-lead">First chair across 150+ orchestral concerts and recitals. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7, with Distinctions at Grades 2 and 5.</p>
+  <p class="m-lead">The youngest member of South Asia’s largest orchestra. I served as first chair, mentored younger musicians, and trained in masterclasses with Trinity Laban faculty. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7.</p>
+  <div class="m-facts"><div><b>150+</b><span>concerts, recitals &amp; charity events</span></div><div><b>11+</b><span>years</span></div></div>
+  <ul class="m-list">
+    <li>Venues include Chowdiah Memorial Hall and Bangalore International Centre.</li>
+  </ul>
 </template>
 
 <script>
