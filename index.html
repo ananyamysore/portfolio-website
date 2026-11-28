@@ -327,6 +327,18 @@
   }
 </style>
 <style>
+  /* ---------- Off the clock: 3-up cards + bookshelf ---------- */
+  .life.three { grid-template-columns: repeat(3, 1fr); }
+  .life .visual .huge.sm { font-size: clamp(56px, 5.6vw, 72px); }
+  .sub-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 44px 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
+  .sub-row h3 { font-family: var(--display); font-weight: 400; font-size: 22px; text-transform: uppercase; }
+  .sub-row h3 span { color: var(--grey); font-weight: 300; }
+  .shelf { display: flex; flex-wrap: wrap; gap: 6px; }
+  .shelf span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--ink); }
+  .shelf span i { font-style: normal; color: var(--grey); }
+  @media (max-width: 1060px) { .life.three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } }
+
   /* ---------- Huge numbers ---------- */
 
   /* Founded-at timeline */
@@ -767,25 +779,72 @@
     <section class="beyond pad" id="beyond">
       <div class="sec-head">
         <h2 class="big fade">Off the Clock</h2>
-        <p>Music and medicine: the practice behind the patience.</p>
+        <p>Strings, stage, clay and the city: the practice behind the patience.</p>
       </div>
-      <div class="life">
+      <div class="life three">
         <article class="clickable" data-open="violin" tabindex="0" role="button">
-          <div class="visual"><span class="huge">150+</span><small>concerts &amp;<br>recitals</small></div>
+          <div class="visual"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
           <div class="body">
-            <p class="tag">Music · Violin · 11+ years</p>
+            <p class="tag">Music · Violin · since 2013</p>
             <h3>First Chair Violin</h3>
-            <p>The youngest member of South Asia’s largest orchestra. Performed at Chowdiah Memorial Hall and Bangalore International Centre, and trained in masterclasses with Trinity Laban faculty.</p>
+            <p>Youngest member of South Asia’s largest orchestra. Bangalore Star Strings, the Youth Orchestra, and now an orchestra led by conductor Grace Biswas.</p>
           </div>
         </article>
-        <article class="clickable" data-open="nightingale" tabindex="0" role="button">
-          <div class="visual light"><span class="huge">500+</span><small>hours at<br>elder-care camps</small></div>
+        <article class="clickable" data-open="ballet" tabindex="0" role="button">
+          <div class="visual light"><span class="huge sm">6</span><small>ballet<br>productions</small></div>
           <div class="body">
-            <p class="tag">Medical outreach · 2023 – 2025</p>
-            <h3>Nightingales Medical Trust</h3>
-            <p>Dementia and geriatric camps reaching 25,000+ elders. It is where I first saw how much care depends on the workflow around it.</p>
+            <p class="tag">Dance · Classical ballet · 2013 – 2022</p>
+            <h3>Ballet</h3>
+            <p>Nine years of classical training with The Lewis Foundation of Classical Ballet, from Coppélia to Sleeping Beauty.</p>
           </div>
         </article>
+        <article>
+          <div class="visual"><span class="huge sm">20</span><small>poems,<br>one book</small></div>
+          <div class="body">
+            <p class="tag">Writing · 2022</p>
+            <h3>C’est la Vie</h3>
+            <p>Wrote, edited and published a poetry collection of 20 poems on the small intricacies of life.</p>
+          </div>
+        </article>
+        <article>
+          <div class="visual light"><span class="huge sm">6 yrs</span><small>of art<br>classes</small></div>
+          <div class="body">
+            <p class="tag">Art · 2018 – 2024</p>
+            <h3>Charcoal &amp; Portfolio</h3>
+            <p>A charcoal study after the National Geographic “Afghan Girl” cover, from mock-ups to final piece, and an IB-style portfolio on the theme of culture.</p>
+          </div>
+        </article>
+        <article>
+          <div class="visual"><span class="huge sm">6 wks</span><small>on the<br>wheel</small></div>
+          <div class="body">
+            <p class="tag">Craft · Pottery</p>
+            <h3>Pottery</h3>
+            <p>Took up wheel throwing to rest my wrists after long violin practice. It became its own practice.</p>
+          </div>
+        </article>
+        <article>
+          <div class="visual light"><span class="huge sm">1 km+</span><small>of streets<br>audited</small></div>
+          <div class="body">
+            <p class="tag">Community · Sensing Local · CRY</p>
+            <h3>Walkable Cities</h3>
+            <p>Audited roads and footpaths for Sensing Local’s Walkable Cities initiative, volunteered with CRY, and played free community concerts at St John’s Church and the East Cultural Association.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="sub-row">
+        <h3>Bookshelf <span>· recent reads</span></h3>
+      </div>
+      <div class="shelf">
+        <span>The Gene <i>· Siddhartha Mukherjee</i></span>
+        <span>The Song of the Cell <i>· Siddhartha Mukherjee</i></span>
+        <span>Gene Machine <i>· Venki Ramakrishnan</i></span>
+        <span>The Black Swan <i>· Nassim Taleb</i></span>
+        <span>David and Goliath <i>· Malcolm Gladwell</i></span>
+        <span>Americanah <i>· Chimamanda Ngozi Adichie</i></span>
+        <span>Between the World and Me <i>· Ta-Nehisi Coates</i></span>
+        <span>Till We Have Faces <i>· C. S. Lewis</i></span>
+        <span>The Hiding Place <i>· Corrie ten Boom</i></span>
       </div>
     </section>
 
@@ -1014,13 +1073,31 @@
   <p class="m-lead"><strong>Institute for Social &amp; Economic Change (Apr – Jun 2024):</strong> synthesised 100+ publications and government reports under Prof. Krishna Raj, and authored two works on population growth and currency digitisation.</p>
 </template>
 
+<template id="t-ballet">
+  <p class="m-tag">Dance · The Lewis Foundation of Classical Ballet · 2013 – 2022</p>
+  <h2 class="m-title" id="m-title">Ballet</h2>
+  <p class="m-lead">Nine years of classical ballet, including summer intensives and full productions. Ballet taught me to blend artistic interpretation with technical skill, and the discipline carried straight into the lab.</p>
+  <div class="m-facts"><div><b>9</b><span>years of training</span></div><div><b>6</b><span>productions</span></div></div>
+  <h3 class="m-h">Productions</h3>
+  <ul class="m-list">
+    <li>Under the Sea · 2015</li>
+    <li>Coppélia, Summer Ballet Intensive · 2016</li>
+    <li>The Elves and the Shoemaker · 2017</li>
+    <li>Beauty and the Beast · 2017</li>
+    <li>Neverland · 2018</li>
+    <li>Sleeping Beauty · 2019</li>
+  </ul>
+</template>
+
 <template id="t-violin">
   <p class="m-tag">Music · Violin · Apr 2014 – Nov 2025</p>
   <h2 class="m-title" id="m-title">First Chair Violin</h2>
   <p class="m-lead">The youngest member of South Asia’s largest orchestra. I served as first chair, mentored younger musicians, and trained in masterclasses with Trinity Laban faculty. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7.</p>
   <div class="m-facts"><div><b>150+</b><span>concerts, recitals &amp; charity events</span></div><div><b>11+</b><span>years</span></div></div>
   <ul class="m-list">
-    <li>Venues include Chowdiah Memorial Hall and Bangalore International Centre.</li>
+    <li>Venues include Chowdiah Memorial Hall and Bangalore International Centre, plus free community concerts at St John’s Church and the East Cultural Association.</li>
+    <li>Ensembles: Bangalore Star Strings Orchestra (2014 – 2018), the Youth Orchestra (2018 – 2021), and an orchestra led by conductor Grace Biswas.</li>
+    <li>Intensives with Prof. Nic Pendlebury, Head of Strings at Trinity Laban; Karl Lutchmayer; Juilliard-trained cellist Avery Waite; and Music in May at the Bangalore School of Music.</li>
   </ul>
 </template>
 
