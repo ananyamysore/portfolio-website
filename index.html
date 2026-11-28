@@ -328,9 +328,7 @@
 </style>
 <style>
   /* ---------- Off the clock: 3-up cards + bookshelf ---------- */
-  .life.three { grid-template-columns: repeat(6, 1fr); }
-  .life.three > article { grid-column: span 2; }
-  .life.three > article:nth-child(n+4) { grid-column: span 3; }
+  .life.three { grid-template-columns: repeat(2, 1fr); }
   .life .visual .huge.sm { font-size: clamp(56px, 5.6vw, 72px); }
   .sub-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 44px 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
   .sub-row h3 { font-family: var(--display); font-weight: 400; font-size: 22px; text-transform: uppercase; }
@@ -338,8 +336,7 @@
   .shelf { display: flex; flex-wrap: wrap; gap: 6px; }
   .shelf span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--ink); }
   .shelf span i { font-style: normal; color: var(--grey); }
-  @media (max-width: 1060px) { .life.three { grid-template-columns: 1fr 1fr; } .life.three > article, .life.three > article:nth-child(n+4) { grid-column: auto; } .life.three > article:last-child { grid-column: 1 / -1; } }
-  @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } .life.three > article:last-child { grid-column: auto; } }
+  @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } }
 
   /* ---------- Huge numbers ---------- */
 
@@ -829,19 +826,11 @@
           </div>
         </article>
         <article>
-          <div class="visual"><span class="huge sm">20</span><small>poems,<br>one book</small></div>
+          <div class="visual light"><span class="huge sm">20</span><small>poems,<br>one book</small></div>
           <div class="body">
             <p class="tag">Writing · 2022</p>
             <h3>C’est la Vie</h3>
             <p>Wrote, edited and published a poetry collection of 20 poems on the small intricacies of life.</p>
-          </div>
-        </article>
-        <article>
-          <div class="visual light"><span class="huge sm">6 yrs</span><small>of art<br>classes</small></div>
-          <div class="body">
-            <p class="tag">Art · 2018 – 2024</p>
-            <h3>Charcoal &amp; Portfolio</h3>
-            <p>A charcoal study after the National Geographic “Afghan Girl” cover, from mock-ups to final piece, and an IB-style portfolio on the theme of culture.</p>
           </div>
         </article>
         <article>
