@@ -333,10 +333,12 @@
 
   /* Founded-at timeline */
   .ages { padding-top: 64px; padding-bottom: 64px; }
-  .agegrid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
+  .agegrid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
   .age { padding: 22px 18px 26px 0; border-right: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; gap: 10px; }
   .age + .age { padding-left: 18px; }
-  .age:last-child { border-right: 0; }
+  .age:nth-child(3n) { border-right: 0; }
+  .age:nth-child(3n+1) { padding-left: 0; }
+  .age:nth-child(n+4) { border-top: 1px solid var(--line); }
   .age .yrs { font-family: var(--display); font-weight: 200; font-size: clamp(88px, 11vw, 160px); line-height: .8; letter-spacing: -0.05em; background: var(--fade); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .age .k { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--grey); }
   .age h3 { font-family: var(--display); font-weight: 400; font-size: 20px; text-transform: uppercase; line-height: 1.05; }
@@ -353,10 +355,6 @@
   .mnum .s { margin-top: 3px; font-size: 11px; color: #8f8f8f; }
 
   @media (max-width: 1060px) {
-    .agegrid { grid-template-columns: repeat(3, 1fr); }
-    .age:nth-child(3) { border-right: 0; }
-    .age:nth-child(4) { padding-left: 0; }
-    .age:nth-child(n+4) { border-top: 1px solid var(--line); }
     .mgrid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 860px) {
@@ -418,7 +416,7 @@
           <div class="scale"><span></span>5 µm</div>
         </div>
         <div class="hero-right">
-          <p class="claim">Five companies before twenty. I build biomedical AI, the agents that run on live software, and the policy that lets both ship.</p>
+          <p class="claim">Six ventures before twenty. I build biomedical AI, the agents that run on live software, and the policy that lets both ship.</p>
           <ul>
             <li>Biomedical AI</li>
             <li>RL Environments</li>
@@ -445,7 +443,7 @@
         </p>
       </div>
       <div class="stats">
-        <div class="stat"><div class="n">5</div><div class="l">Ventures Founded</div><div class="s">AXIA · Andora · Zora · OpenMed QA · Avera</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">Ventures Founded</div><div class="s">AXIA · Andora · Zora · Avera · OpenMed QA · Nightingale</div></div>
         <div class="stat"><div class="n">14</div><div class="l">Age at First Company</div><div class="s">Andora, 2023</div></div>
         <div class="stat"><div class="n">.91</div><div class="l">Held-out AUC</div><div class="s">diabetes progression model</div></div>
         <div class="stat"><div class="n">1<sup>/31</sup></div><div class="l">RSI-India, Globally</div><div class="s">Outstanding Scholar · ~0.6% acceptance</div></div>
@@ -455,8 +453,8 @@
     <!-- ============ MARQUEE ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="track">
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span>
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span>
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span>
+        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span>
       </div>
     </div>
 
@@ -464,13 +462,14 @@
     <section class="ages pad" id="ages">
       <div class="sec-head">
         <h2 class="big fade">Founded At</h2>
-        <p>Four years, five companies, one government fellowship.</p>
+        <p>Four years, six companies, one government fellowship.</p>
       </div>
       <div class="agegrid">
         <div class="age clickable" data-open="andora" tabindex="0" role="button"><span class="yrs">14</span><span class="k">2023 · Founder</span><h3>Andora</h3><p>Predictive medicine, 0→1 to a $728K+ quarterly pipeline.</p></div>
         <div class="age clickable" data-open="openmed" tabindex="0" role="button"><span class="yrs">15</span><span class="k">2024 · Founder</span><h3>OpenMed QA</h3><p>120+ open-source medical-supply designs for an 86-country network.</p></div>
         <div class="age clickable" data-open="zora" tabindex="0" role="button"><span class="yrs">17</span><span class="k">2026 · Founder &amp; CEO</span><h3>Zora</h3><p>Growth and marketing for 100+ small businesses across Asia.</p></div>
         <div class="age clickable" data-open="axia" tabindex="0" role="button"><span class="yrs">18</span><span class="k">2026 · Co-Founder &amp; CEO</span><h3>AXIA</h3><p>Live RL environments for AI agents. Pilots at PhonePe, Infosys, Qualcomm.</p></div>
+        <div class="age clickable" data-open="avera" tabindex="0" role="button"><span class="yrs">18</span><span class="k">2026 · Co-Founder</span><h3>Avera</h3><p>A test range for biothreat preparedness: 10,000 synthetic outbreaks per sweep.</p></div>
         <div class="age clickable" data-open="karnataka" tabindex="0" role="button"><span class="yrs">18</span><span class="k">2026 · Fellow</span><h3>Govt. of Karnataka</h3><p>Policy Fellow to the IT Minister; youngest KDEM startup representative in India.</p></div>
       </div>
     </section>
@@ -528,12 +527,13 @@
           </div>
         </article>
         <article class="venture clickable" data-open="avera" tabindex="0" role="button">
-          <div class="top"><span class="tag">Founder</span><span class="live">In development</span></div>
+          <div class="top"><span class="tag">Co-Founder · Product &amp; Strategy · 2026</span><span class="live">BioPrevail × CEPI</span></div>
           <h3>Avera</h3>
-          <p>An early-stage biodefense platform, bringing the same AI-for-biology approach to threats that move faster than institutions do.</p>
+          <p>Air combat got a simulator. Cyber got a range. Biology never did. Avera is the test range for biological threat preparedness: evidence in hours, where the 100 Days Mission waits months.</p>
+          <a class="xlink" href="https://avera-alpha.vercel.app/" target="_blank" rel="noopener">Visit Avera ↗</a>
           <div class="foot-row">
-            <div class="num">Bio<small>defense · early stage</small></div>
-            <div class="chips"><span>Biosecurity</span><span>AI</span></div>
+            <div class="num">10,000<small>synthetic outbreaks per sweep · target</small></div>
+            <div class="chips"><span>Forge</span><span>Range</span><span>Sentinel</span><span>Ledger</span></div>
           </div>
         </article>
       </div>
@@ -543,7 +543,7 @@
     <section class="mega pad" id="numbers">
       <div class="sec-head">
         <h2 class="big">By the Numbers</h2>
-        <p>Every figure here comes from shipped work, a lab notebook or a held-out test set.</p>
+        <p>From shipped work, lab notebooks, held-out test sets, and Avera’s build targets.</p>
       </div>
       <div class="mgrid">
         <div class="mnum"><div class="n">$728K+</div><div class="l">Quarterly pipeline</div><div class="s">Andora, built 0→1 from age 14</div></div>
@@ -552,6 +552,9 @@
         <div class="mnum"><div class="n">127+</div><div class="l">ML models benchmarked</div><div class="s">sensitivity · specificity · latency · cost</div></div>
         <div class="mnum"><div class="n">97.95%</div><div class="l">Sensitivity</div><div class="s">105K-parameter CPU-only pneumonia CNN</div></div>
         <div class="mnum"><div class="n">150+</div><div class="l">Concerts</div><div class="s">first chair violin, 11+ years</div></div>
+        <div class="mnum"><div class="n">2.4M</div><div class="l">Synthetic people per region</div><div class="s">Avera · engineering target</div></div>
+        <div class="mnum"><div class="n">10,000</div><div class="l">Outbreak scenarios per sweep</div><div class="s">Avera · 14 parameters · target</div></div>
+        <div class="mnum"><div class="n">&lt;9 hrs</div><div class="l">Evidence, not months</div><div class="s">Avera · target run time</div></div>
       </div>
     </section>
 
@@ -595,6 +598,13 @@
           <div class="svc-body">
             <p>State-level AI adoption with the Government of Karnataka, including its proposed collaboration with Anthropic, plus constitutional and economic research.</p>
             <ul><li><span>IT Minister’s Office</span><span>Policy Fellow</span></li><li><span>KDEM</span><span>Startup division</span></li><li><span>CLPR · ISEC</span><span>Law &amp; economics</span></li></ul>
+          </div>
+        </details>
+        <details class="svc">
+          <summary><span class="n">6</span><span class="label">Biosecurity &amp; Preparedness</span><span class="go"><svg><use href="#right"/></svg></span></summary>
+          <div class="svc-body">
+            <p>At Avera: synthetic populations calibrated on public aggregates, outbreak sweeps at population scale, and a scorer that grades detection models and response plans. Defensive only, behind a biosecurity review board.</p>
+            <ul><li><span>Forge</span><span>Generator</span></li><li><span>Range</span><span>Simulator</span></li><li><span>Sentinel · Ledger</span><span>Scorer · Record</span></li></ul>
           </div>
         </details>
       </div>
@@ -885,9 +895,33 @@
 </template>
 
 <template id="t-avera">
-  <p class="m-tag">Founder · In development</p>
+  <p class="m-tag">Co-Founder · Product &amp; Strategy · BioPrevail × CEPI Biosecurity Innovation Challenge 2026</p>
   <h2 class="m-title" id="m-title">Avera</h2>
-  <p class="m-lead">An early-stage biodefense platform. More soon.</p>
+  <p class="m-lead">A test range for biological threat preparedness. How many real outbreaks was your detection model tested against? For most programmes the honest answer is one, or none. Avera exists so the answer is ten thousand: at population scale, under audit, with the privacy problem solved before a model is ever trained.</p>
+  <div class="m-facts"><div><b>2.4M</b><span>synthetic people per region</span></div><div><b>10,000</b><span>scenarios per sweep</span></div><div><b>&lt;9 hrs</b><span>signal to scored evidence</span></div><div><b>3%</b><span>fidelity to held-out aggregates</span></div></div>
+  <div class="m-facts"><div><b>20</b><span>calibration measures</span></div><div><b>14</b><span>sweep parameters</span></div><div><b>6</b><span>scoring metrics</span></div><div><b>$66.9B</b><span>US countermeasure need, FY25–29</span></div></div>
+  <h3 class="m-h">How it works</h3>
+  <ul class="m-list">
+    <li><strong>Calibrate:</strong> public census, mobility and health-system statistics fit the generator to a real region. Aggregates go in, never records.</li>
+    <li><strong>Generate:</strong> a coherent synthetic population with formal privacy guarantees. No real person’s record is in it.</li>
+    <li><strong>Sweep:</strong> thousands of seeded, versioned, reproducible runs in parallel. The rare event becomes a distribution you can sample.</li>
+    <li><strong>Score:</strong> a detection model, response plan or logistics posture graded across the whole sweep, with a lineage record for every run.</li>
+  </ul>
+  <h3 class="m-h">Four modules, one substrate</h3>
+  <ul class="m-list">
+    <li><strong>Forge</strong>, the generator · <strong>Range</strong>, the simulator · <strong>Sentinel</strong>, the scorer · <strong>Ledger</strong>, the record underneath everything.</li>
+  </ul>
+  <h3 class="m-h">Six offerings</h3>
+  <ul class="m-list">
+    <li>Model audit · Exercise studio · Surveillance siting study · Stockpile stress test · Trial readiness study · Open benchmark.</li>
+    <li>Strictly defensive: no agent design, nothing that adds offensive capability, no re-identifiable data. A biosecurity review board with external members signs off every new data class.</li>
+  </ul>
+  <h3 class="m-h">Team</h3>
+  <ul class="m-list">
+    <li><strong>Ananya Sukruta Mysore</strong>, product and strategy · <strong>Avani Agarwal</strong>, technical build · <strong>Dev Karan</strong>, deployment and partnerships.</li>
+  </ul>
+  <p class="m-lead" style="font-size:12px">Scale, speed and fidelity figures are Avera’s engineering targets. The $66.9B figure is from ASPR’s PHEMCE multiyear budget, FY2025–2029.</p>
+  <div class="m-links"><a class="solid" href="https://avera-alpha.vercel.app/" target="_blank" rel="noopener">Visit Avera ↗</a></div>
 </template>
 
 <template id="t-nightingale">
