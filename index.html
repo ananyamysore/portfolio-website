@@ -328,7 +328,9 @@
 </style>
 <style>
   /* ---------- Off the clock: 3-up cards + bookshelf ---------- */
-  .life.three { grid-template-columns: repeat(3, 1fr); }
+  .life.three { grid-template-columns: repeat(6, 1fr); }
+  .life.three > article { grid-column: span 2; }
+  .life.three > article:nth-child(n+4) { grid-column: span 3; }
   .life .visual .huge.sm { font-size: clamp(56px, 5.6vw, 72px); }
   .sub-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 44px 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
   .sub-row h3 { font-family: var(--display); font-weight: 400; font-size: 22px; text-transform: uppercase; }
@@ -336,8 +338,8 @@
   .shelf { display: flex; flex-wrap: wrap; gap: 6px; }
   .shelf span { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--ink); }
   .shelf span i { font-style: normal; color: var(--grey); }
-  @media (max-width: 1060px) { .life.three { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } }
+  @media (max-width: 1060px) { .life.three { grid-template-columns: 1fr 1fr; } .life.three > article, .life.three > article:nth-child(n+4) { grid-column: auto; } .life.three > article:last-child { grid-column: 1 / -1; } }
+  @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } .life.three > article:last-child { grid-column: auto; } }
 
   /* ---------- Huge numbers ---------- */
 
@@ -414,7 +416,7 @@
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero pad">
-      <h1 class="fade"><span class="l1">Ananya Sukruta</span><span class="l2">Mysore.</span></h1>
+      <h1 class="fade"><span class="l1">Ananya Sukruta</span><span class="l2">Mysore</span></h1>
       <div class="hero-grid">
         <div class="hero-left">
           <p>Serial Founder · AXIA, Andora, Zora<br>Bioinformatics · UC San Diego</p>
@@ -443,7 +445,7 @@
         </div>
         <p class="quote">
           “Ananya Sukruta Mysore is a founder and bioinformatics student at UC San Diego. At AXIA she builds self-updating
-          training environments for AI agents, with pilots at PhonePe, Infosys and Qualcomm. At Andora she built a
+          training environments for AI agents, mentored by Microsoft, Amazon and HP. At Andora she built a
           predictive-medicine platform to a $728K+ quarterly pipeline, and at Zora she runs growth for 100+ businesses across
           Asia. Through Project Nightingale, 25,000+ elders have been screened for dementia.”
         </p>
@@ -459,8 +461,8 @@
     <!-- ============ MARQUEE ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="track">
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span><span>10,000 outbreaks · 6.6 hours · one laptop</span>
-        <span>Pilots with PhonePe</span><span>Infosys</span><span>Qualcomm</span><span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span><span>10,000 outbreaks · 6.6 hours · one laptop</span>
+        <span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span><span>10,000 outbreaks · 6.6 hours · one laptop</span>
+        <span>Mentored by Microsoft · Amazon · HP</span><span>EWOR</span><span>Policy Fellow · Karnataka IT Minister</span><span>KDEM Fellow</span><span>Outstanding Scholar · RSI-India</span><span>2nd Worldwide · Imperial College</span><span>Karnataka Rajyotsava Award</span><span>BioPrevail × CEPI Biosecurity Challenge</span><span>10,000 outbreaks · 6.6 hours · one laptop</span>
       </div>
     </div>
 
@@ -477,7 +479,7 @@
           <p>Self-updating reinforcement-learning environments for training AI agents on live enterprise software. Agents should learn on what’s live, not on yesterday’s snapshot.</p>
           <a class="xlink" href="https://axiaai.tech/" target="_blank" rel="noopener">Visit AXIA ↗</a>
           <div class="foot-row">
-            <div class="chips"><span>PhonePe</span><span>Infosys</span><span>Qualcomm</span></div>
+            <div class="chips"><span>Microsoft</span><span>Amazon</span><span>HP</span><span>EWOR</span></div>
           </div>
         </article>
         <article class="venture clickable" data-open="andora" tabindex="0" role="button">
@@ -563,7 +565,7 @@
           <summary><span class="n">1</span><span class="label">AI Agents &amp; RL Environments</span><span class="go"><svg><use href="#right"/></svg></span></summary>
           <div class="svc-body">
             <p>At AXIA: living environments built on real enterprise software that re-validate themselves on every upstream release, and verifiers hardened against reward hacking by models told to cheat.</p>
-            <ul><li><span>ERPNext</span><span>First environment</span></li><li><span>Verifiers</span><span>Hack-tested</span></li><li><span>Pilots</span><span>PhonePe · Infosys · Qualcomm</span></li></ul>
+            <ul><li><span>ERPNext</span><span>First environment</span></li><li><span>Verifiers</span><span>Hack-tested</span></li><li><span>Mentors</span><span>Microsoft · Amazon · HP</span></li></ul>
           </div>
         </details>
         <details class="svc">
@@ -807,7 +809,7 @@
     <section class="beyond pad" id="beyond">
       <div class="sec-head">
         <h2 class="big fade">Off the Clock</h2>
-        <p>Strings, stage, clay and the city: the practice behind the patience.</p>
+        <p>Strings, stage, page and the city: the practice behind the patience.</p>
       </div>
       <div class="life three">
         <article class="clickable" data-open="violin" tabindex="0" role="button">
@@ -843,15 +845,7 @@
           </div>
         </article>
         <article>
-          <div class="visual"><span class="huge sm">6 wks</span><small>on the<br>wheel</small></div>
-          <div class="body">
-            <p class="tag">Craft · Pottery</p>
-            <h3>Pottery</h3>
-            <p>Took up wheel throwing to rest my wrists after long violin practice. It became its own practice.</p>
-          </div>
-        </article>
-        <article>
-          <div class="visual light"><span class="huge sm">1 km+</span><small>of streets<br>audited</small></div>
+          <div class="visual"><span class="huge sm">1 km+</span><small>of streets<br>audited</small></div>
           <div class="body">
             <p class="tag">Community · Sensing Local · CRY</p>
             <h3>Walkable Cities</h3>
@@ -880,7 +874,7 @@
     <section class="edu pad">
       <div><p class="k">University</p><h3>UC San Diego</h3><p>B.S. Bioinformatics · Class of 2030</p></div>
       <div><p class="k">Pre-university</p><h3>The International School Bangalore</h3><p>IB Diploma · HL Biology, Chemistry, Mathematics · TISB ’26</p></div>
-      <div><p class="k">Research programme</p><h3>RSI-India ’25</h3><p>Indian Institute of Science, inaugural cohort</p></div>
+      <div><p class="k">Further study</p><h3>Yale · Stanford · Melbourne · AMNH</h3><p>Introduction to Psychology, Yale (2024) · RNA Biology with Eterna, Stanford (2024) · The Science of Stem Cells, American Museum of Natural History (2025) · Epigenetic Control of Gene Expression, University of Melbourne (2025)</p></div>
     </section>
 
     <!-- ============ LET'S TALK ============ -->
@@ -921,7 +915,7 @@
   <p class="m-tag">Andorr Corp. · Co-Founder &amp; Chief Executive Officer · Jun 2026 – Present</p>
   <h2 class="m-title" id="m-title">AXIA</h2>
   <p class="m-lead">AXIA builds self-updating reinforcement-learning environments for training AI agents on live enterprise software. Static benchmarks go stale the moment the software they copy ships a new version. AXIA’s environments run the real thing and keep up with it.</p>
-  <div class="m-facts"><div><b>3</b><span>enterprise pilots: PhonePe, Infosys, Qualcomm</span></div><div><b>ERPNext</b><span>first live environment</span></div></div>
+  <div class="m-facts"><div><b>ERPNext</b><span>first live environment</span></div></div>
   <ul class="m-list">
     <li>“Living” environments run real enterprise software, detect every upstream release, and automatically re-validate, repair or flag each training task.</li>
     <li>Hack-tested verifiers: each one is attacked by a model told to pass without doing the work, to kill reward hacking.</li>
