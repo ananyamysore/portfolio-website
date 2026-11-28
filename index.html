@@ -77,7 +77,7 @@
   .hero-left p { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; line-height: 1.6; }
   .portrait { width: 340px; height: 340px; max-width: 100%; border-radius: 50%; overflow: hidden; position: relative; background: #0b0b0b; }
   .portrait img, .portrait canvas { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.05); transition: filter .5s ease; }
-  .portrait:hover img, .portrait:hover canvas { filter: grayscale(0); }
+  
   .portrait .scale { position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: .08em; color: #d0d0d0; pointer-events: none; }
   .portrait .scale span { display: inline-block; width: 42px; height: 2px; background: #e5e5e5; }
   .hero-right { text-align: right; padding-bottom: 8px; }
@@ -342,9 +342,9 @@
   .field { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 16px; }
   .field figure, .m-grid figure { margin: 0; min-width: 0; }
   .field img { width: 100%; height: 340px; object-fit: cover; border-radius: 22px; display: block; filter: grayscale(1); transition: filter .5s; }
-  .field figure:hover img { filter: none; }
   figcaption { margin-top: 8px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--grey); }
   .m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .m-grid img, .m-wide img { filter: grayscale(1); }
   .m-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; display: block; }
   .m-grid.tall img { aspect-ratio: 3 / 4; }
   .m-grid.c3 { grid-template-columns: repeat(3, 1fr); }
@@ -356,15 +356,13 @@
   .life.three .visual { height: 280px; }
   .life .visual.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .5s; }
   .life .visual.photo::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
-  .life article:hover .visual.photo img { filter: none; }
   .life .visual.photo > span, .life .visual.photo > small { z-index: 1; }
   .life .visual.cover { position: relative; overflow: hidden; background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; }
   .life .visual.cover img { position: absolute; right: 24px; top: 22px; bottom: 22px; height: calc(100% - 44px); width: auto; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.8); filter: grayscale(1); transition: filter .5s, transform .5s; }
-  .life article:hover .visual.cover img { filter: none; transform: rotate(-2deg) translateY(-4px); }
+  .life article:hover .visual.cover img { transform: rotate(-2deg) translateY(-4px); }
   .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 40px; }
   .gallery figure { margin: 0; min-width: 0; }
   .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; filter: grayscale(1); transition: filter .5s; }
-  .gallery figure:hover img { filter: none; }
   .sub-row .xlink { margin-top: 0; }
   .gallery.g3 { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 860px) { .gallery.g3 { grid-template-columns: 1fr 1fr; } .gallery.g3 figure:last-child { grid-column: 1 / -1; } }
@@ -453,7 +451,7 @@
           <p>Serial Founder · AXIA, Andora, Zora<br>Bioinformatics · UC San Diego</p>
           <a class="arrow" href="#ventures" aria-label="See my ventures"><svg><use href="#arr"/></svg></a>
         </div>
-        <div class="portrait"><img src="me.jpg" alt="Ananya Sukruta Mysore presenting her research at a podium"></div>
+        <div class="portrait"><img src="me.jpg" alt="Ananya Sukruta Mysore performing on violin"></div>
         <div class="hero-right">
           <p class="claim">Six ventures before twenty. I build biomedical AI, the agents that run on live software, and the policy that lets both ship.</p>
           <ul>
@@ -738,8 +736,9 @@
           <ul class="mini"><li><span>Field</span><span>6,000+ entrants</span></li><li><span>Year</span><span>2025</span></li></ul>
         </article>
       </div>
-      <div class="field" style="grid-template-columns: 1fr">
+      <div class="field">
         <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/moscow-stage.jpg" alt="BRICS Youth Symphony Orchestra on stage at the Festival of Youth Orchestras of the World in Moscow" loading="lazy"><figcaption>BRICS Youth Symphony Orchestra · Festival of Youth Orchestras of the World, Moscow</figcaption></figure>
+        <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/violin-performance.jpg" alt="Ananya performing violin with a chamber ensemble" loading="lazy" style="object-position: 55% 40%"><figcaption>Chamber performance · violin</figcaption></figure>
       </div>
     </section>
 
@@ -1084,19 +1083,6 @@
     <li>Colocalisation in Fiji/JACoP (Pearson’s and Manders’ coefficients).</li>
     <li>Advisor: Dr. Nikhil Gandasi. I authored and presented the paper, and was named Outstanding Scholar of the cohort.</li>
   </ul>
-  <h3 class="m-h">From the microscope</h3>
-  <div class="m-grid tall">
-    <figure><img src="images/rab11-cd63-cells.jpg" alt="INS-1 cells with CD63-EGFP and Rab11 wild type" loading="lazy"><figcaption>CD63-EGFP + Rab11 WT · 36 h</figcaption></figure>
-    <figure><img src="images/cd63-egfp-cells.jpg" alt="INS-1 cells with CD63-EGFP alone" loading="lazy"><figcaption>CD63-EGFP control · 36 h</figcaption></figure>
-  </div>
-  <div class="m-wide" style="margin-top:10px"><figure style="margin:0"><img src="images/confocal-acquisition.jpg" alt="Live acquisition in NIS-Elements on the spinning-disk confocal" loading="lazy"><figcaption>Live acquisition, 405 / 488 / 561 nm channels · NIS-Elements</figcaption></figure></div>
-</template>
-
-<template id="t-secretome">
-  <p class="m-tag">HCG Hospitals · Lead Engineer, Regenerative Medicine · Apr 2024 – Dec 2025</p>
-  <h2 class="m-title" id="m-title">MSC Secretome</h2>
-  <p class="m-lead">I led the engineering team behind India’s first plant-based solution for chronic inflammation: a mesenchymal stem-cell secretome platform for autoimmune disease, under Dr. Jyothsna Rao, Research Director, ISSL.</p>
-  <div class="m-facts"><div><b>21</b><span>months</span></div><div><b>7+</b><span>wet-lab techniques</span></div><div><b>JEI</b><span>manuscript accepted</span></div></div>
   <ul class="m-list">
     <li>Compared MSCs grown in FBS against plant-based, xeno-free PLAY® medium, with and without inflammatory licensing, for IL-6 and IDO secretion.</li>
     <li>Measured secretome suppression of IFN-γ and TNF-α at 24, 48 and 72 h. PLAY-MSCs suppressed IFN-γ more than FBS-MSCs at every time point.</li>
@@ -1193,7 +1179,9 @@
     <li>Intensives with Prof. Nic Pendlebury, Head of Strings at Trinity Laban; Karl Lutchmayer; Juilliard-trained cellist Avery Waite; and Music in May at the Bangalore School of Music.</li>
   </ul>
   <div class="m-grid c2">
+    <figure><img src="images/violin-performance.jpg" alt="Performing violin with a chamber ensemble" loading="lazy"><figcaption>Chamber performance</figcaption></figure>
     <figure><img src="images/moscow-audience.jpg" alt="Festival audience in Moscow" loading="lazy"><figcaption>The festival audience · Moscow</figcaption></figure>
+    <figure><img src="images/moscow-orchestra.jpg" alt="Orchestra on stage in Moscow" loading="lazy"><figcaption>On stage · Moscow</figcaption></figure>
     <figure><img src="images/orchestra-rehearsal.jpg" alt="Ensemble rehearsal in a concert hall" loading="lazy"><figcaption>Rehearsal before a performance · Bengaluru</figcaption></figure>
   </div>
 </template>
