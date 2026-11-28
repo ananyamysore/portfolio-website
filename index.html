@@ -338,6 +338,22 @@
   .shelf span i { font-style: normal; color: var(--grey); }
   @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } }
 
+  /* ---------- Evidence photos ---------- */
+  .field { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; margin-top: 16px; }
+  .field figure, .m-grid figure { margin: 0; min-width: 0; }
+  .field img { width: 100%; height: 340px; object-fit: cover; border-radius: 22px; display: block; filter: grayscale(1); transition: filter .5s; }
+  .field figure:hover img { filter: none; }
+  figcaption { margin-top: 8px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--grey); }
+  .m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .m-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; display: block; }
+  .m-grid.tall img { aspect-ratio: 3 / 4; }
+  .m-wide img { width: 100%; max-height: 60vh; object-fit: cover; border-radius: 16px; display: block; }
+  .life .visual.photo { position: relative; overflow: hidden; }
+  .life .visual.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.5); transition: filter .5s; }
+  .life article:hover .visual.photo img { filter: grayscale(0) brightness(.55); }
+  .life .visual.photo > span, .life .visual.photo > small { position: relative; }
+  @media (max-width: 860px) { .field { grid-template-columns: 1fr; } .field img { height: 260px; } }
+
   /* ---------- Huge numbers ---------- */
 
   /* Founded-at timeline */
@@ -700,6 +716,10 @@
           <ul class="mini"><li><span>Field</span><span>6,000+ entrants</span></li><li><span>Year</span><span>2025</span></li></ul>
         </article>
       </div>
+      <div class="field">
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-camp.jpg" alt="Ananya recording screening data at a Project Nightingale camp" loading="lazy" style="object-position: 60% 6%"><figcaption>Screening at a Project Nightingale camp · Bengaluru</figcaption></figure>
+        <figure class="clickable" data-open="rab11a" tabindex="0" role="button"><img src="images/rab11-cd63-cells.jpg" alt="Confocal image of INS-1 beta cells expressing CD63-EGFP and Rab11" loading="lazy"><figcaption>CD63-EGFP + Rab11 in INS-1 beta cells, 100× confocal · IISc, 2025</figcaption></figure>
+      </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
@@ -810,7 +830,7 @@
       </div>
       <div class="life three">
         <article class="clickable" data-open="violin" tabindex="0" role="button">
-          <div class="visual"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
+          <div class="visual photo"><img src="images/orchestra-rehearsal.jpg" alt="" loading="lazy"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
           <div class="body">
             <p class="tag">Music · Violin · since 2013</p>
             <h3>First Chair Violin</h3>
@@ -978,6 +998,7 @@
   <p class="m-lead">I ran dementia and geriatric care camps for elders across 8+ care settings with a four-time award-winning organisation, and coordinated the workflow changes that made each camp see more people, faster.</p>
   <div class="m-facts"><div><b>25K+</b><span>elders reached</span></div><div><b>60+</b><span>camps</span></div><div><b>500+</b><span>hours</span></div></div>
   <div class="m-facts"><div><b>−22%</b><span>wait times</span></div><div><b>+18%</b><span>screening</span></div><div><b>+30%</b><span>participation</span></div><div><b>+15%</b><span>follow-up adherence</span></div></div>
+  <div class="m-grid tall" style="max-width:360px"><figure><img src="images/nightingale-camp.jpg" alt="Recording screening data at a camp" loading="lazy"><figcaption>Recording screening data at a camp</figcaption></figure></div>
   <h3 class="m-h">Recognition</h3>
   <ul class="m-list">
     <li>Karnataka Rajyotsava Award</li>
@@ -1015,6 +1036,12 @@
     <li>Colocalisation in Fiji/JACoP (Pearson’s and Manders’ coefficients).</li>
     <li>Advisor: Dr. Nikhil Gandasi. I authored and presented the paper, and was named Outstanding Scholar of the cohort.</li>
   </ul>
+  <h3 class="m-h">From the microscope</h3>
+  <div class="m-grid tall">
+    <figure><img src="images/rab11-cd63-cells.jpg" alt="INS-1 cells with CD63-EGFP and Rab11 wild type" loading="lazy"><figcaption>CD63-EGFP + Rab11 WT · 36 h</figcaption></figure>
+    <figure><img src="images/cd63-egfp-cells.jpg" alt="INS-1 cells with CD63-EGFP alone" loading="lazy"><figcaption>CD63-EGFP control · 36 h</figcaption></figure>
+  </div>
+  <div class="m-wide" style="margin-top:10px"><figure style="margin:0"><img src="images/confocal-acquisition.jpg" alt="Live acquisition in NIS-Elements on the spinning-disk confocal" loading="lazy"><figcaption>Live acquisition, 405 / 488 / 561 nm channels · NIS-Elements</figcaption></figure></div>
 </template>
 
 <template id="t-secretome">
@@ -1027,6 +1054,7 @@
     <li>Measured secretome suppression of IFN-γ and TNF-α at 24, 48 and 72 h. PLAY-MSCs suppressed IFN-γ more than FBS-MSCs at every time point.</li>
     <li>Techniques: cell culture, ELISA, PCR, SDS-PAGE, MTT, cytotoxicity analysis and protein characterisation.</li>
   </ul>
+  <div class="m-wide"><figure style="margin:0"><img src="images/presenting-secretome.jpg" alt="Ananya presenting the secretome research at a podium" loading="lazy" style="object-position: 50% 35%"><figcaption>Presenting the secretome work on inflammation and autoimmune disease</figcaption></figure></div>
 </template>
 
 <template id="t-autophagy">
@@ -1098,6 +1126,7 @@
 </template>
 
 <template id="t-violin">
+  <div class="m-wide" style="margin-bottom:22px"><figure style="margin:0"><img src="images/orchestra-rehearsal.jpg" alt="Ensemble rehearsal in a concert hall" loading="lazy"><figcaption>Rehearsal before a performance</figcaption></figure></div>
   <p class="m-tag">Music · Violin · Apr 2014 – Nov 2025</p>
   <h2 class="m-title" id="m-title">First Chair Violin</h2>
   <p class="m-lead">The youngest member of South Asia’s largest orchestra. I served as first chair, mentored younger musicians, and trained in masterclasses with Trinity Laban faculty. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7.</p>
