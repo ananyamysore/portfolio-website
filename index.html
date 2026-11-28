@@ -330,7 +330,7 @@
   /* ---------- Off the clock: 3-up cards + bookshelf ---------- */
   .life.three { grid-template-columns: repeat(2, 1fr); }
   .life .visual .huge.sm { font-size: clamp(56px, 5.6vw, 72px); }
-  .sub-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 44px 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
+  .sub-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; margin: 44px 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
   .sub-row h3 { font-family: var(--display); font-weight: 400; font-size: 22px; text-transform: uppercase; }
   .sub-row h3 span { color: var(--grey); font-weight: 300; }
   .shelf { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -339,7 +339,7 @@
   @media (max-width: 860px) { .life.three { grid-template-columns: 1fr; } }
 
   /* ---------- Evidence photos ---------- */
-  .field { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; margin-top: 16px; }
+  .field { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 16px; }
   .field figure, .m-grid figure { margin: 0; min-width: 0; }
   .field img { width: 100%; height: 340px; object-fit: cover; border-radius: 22px; display: block; filter: grayscale(1); transition: filter .5s; }
   .field figure:hover img { filter: none; }
@@ -353,8 +353,17 @@
   @media (max-width: 680px) { .m-grid.c3 { grid-template-columns: 1fr 1fr; } }
   .m-wide img { width: 100%; max-height: 60vh; object-fit: cover; border-radius: 16px; display: block; }
   .life .visual.photo { position: relative; overflow: hidden; }
-  .life .visual.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(.5); transition: filter .5s; }
-  .life article:hover .visual.photo img { filter: grayscale(0) brightness(.55); }
+  .life.three .visual { height: 280px; }
+  .life .visual.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .5s; }
+  .life .visual.photo::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
+  .life article:hover .visual.photo img { filter: none; }
+  .life .visual.photo > span, .life .visual.photo > small { z-index: 1; }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+  .gallery figure { margin: 0; min-width: 0; }
+  .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; filter: grayscale(1); transition: filter .5s; }
+  .gallery figure:hover img { filter: none; }
+  .sub-row .xlink { margin-top: 0; }
+  @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; gap: 10px; } .gallery figure:last-child { grid-column: 1 / -1; } }
   .life .visual.photo > span, .life .visual.photo > small { position: relative; }
   @media (max-width: 860px) { .field { grid-template-columns: 1fr; } .field img { height: 260px; } }
 
@@ -547,6 +556,10 @@
           </div>
         </article>
       </div>
+      <div class="field">
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-elders.jpg" alt="Ananya handing supplies to an elder at a Project Nightingale camp" loading="lazy" style="object-position: 70% 40%"><figcaption>Project Nightingale care camp · Bengaluru</figcaption></figure>
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-medicines.jpg" alt="Sorting and logging medicines at a camp" loading="lazy" style="object-position: 50% 30%"><figcaption>Sorting and logging medicines for the camp</figcaption></figure>
+      </div>
     </section>
 
     <!-- ============ BY THE NUMBERS ============ -->
@@ -721,7 +734,7 @@
         </article>
       </div>
       <div class="field">
-        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-elders.jpg" alt="Ananya handing supplies to an elder at a Project Nightingale camp" loading="lazy" style="object-position: 70% 40%"><figcaption>Project Nightingale · with elders at a care camp, Bengaluru</figcaption></figure>
+        <figure class="clickable" data-open="secretome" tabindex="0" role="button"><img src="images/presenting-secretome.jpg" alt="Ananya presenting secretome research at a podium" loading="lazy" style="object-position: 55% 35%"><figcaption>Presenting the stem-cell secretome work · HCG</figcaption></figure>
         <figure class="clickable" data-open="rab11a" tabindex="0" role="button"><img src="images/rab11-cd63-cells.jpg" alt="Confocal image of INS-1 beta cells expressing CD63-EGFP and Rab11" loading="lazy"><figcaption>CD63-EGFP + Rab11 in INS-1 beta cells, 100× confocal · IISc, 2025</figcaption></figure>
       </div>
     </section>
@@ -832,6 +845,17 @@
         <h2 class="big fade">Off the Clock</h2>
         <p>Strings, stage, page and the city: the practice behind the patience.</p>
       </div>
+
+      <div class="sub-row">
+        <h3>Community <span>· since 2023</span></h3>
+        <button type="button" class="xlink" data-open="nightingale" style="background:none;border:0;border-bottom:1px solid currentColor;cursor:pointer;padding:0 0 1px;font-family:inherit;color:inherit">Project Nightingale ↗</button>
+      </div>
+      <div class="gallery">
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-distribution.jpg" alt="Distribution table with steel tiffins" loading="lazy" style="object-position: 30% 30%"><figcaption>Distribution day · Nightingales Medical Trust</figcaption></figure>
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-home-visit.jpg" alt="Delivering supplies on a home visit" loading="lazy"><figcaption>Home visit and supply drop</figcaption></figure>
+        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-camp.jpg" alt="Recording screening data at a camp" loading="lazy" style="object-position: 60% 12%"><figcaption>Recording screening data</figcaption></figure>
+      </div>
+
       <div class="life three">
         <article class="clickable" data-open="violin" tabindex="0" role="button">
           <div class="visual photo"><img src="images/orchestra-rehearsal.jpg" alt="" loading="lazy"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
