@@ -358,6 +358,9 @@
   .life .visual.photo::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
   .life article:hover .visual.photo img { filter: none; }
   .life .visual.photo > span, .life .visual.photo > small { z-index: 1; }
+  .life .visual.cover { position: relative; overflow: hidden; background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; }
+  .life .visual.cover img { position: absolute; right: 24px; top: 22px; bottom: 22px; height: calc(100% - 44px); width: auto; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.8); filter: grayscale(1); transition: filter .5s, transform .5s; }
+  .life article:hover .visual.cover img { filter: none; transform: rotate(-2deg) translateY(-4px); }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
   .gallery figure { margin: 0; min-width: 0; }
   .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; filter: grayscale(1); transition: filter .5s; }
@@ -874,11 +877,12 @@
           </div>
         </article>
         <article>
-          <div class="visual light"><span class="huge sm">20</span><small>poems,<br>one book</small></div>
+          <div class="visual cover"><img src="images/cest-la-vie-cover.jpg" alt="Cover of C’est la vie – This is Life by Ananya Sukruta Mysore" loading="lazy"><span class="huge sm">20</span></div>
           <div class="body">
             <p class="tag">Writing · 2022</p>
             <h3>C’est la Vie</h3>
-            <p>Wrote, edited and published a poetry collection of 20 poems on the small intricacies of life.</p>
+            <p>Wrote, edited and published <em>C’est la vie – This is Life</em>, a collection of 20 poems on the small intricacies of life.</p>
+            <a class="xlink" href="https://ebooks.bookleafpub.com/product-page/c-est-la-vie-this-is-life" target="_blank" rel="noopener">Buy the book ↗</a>
           </div>
         </article>
         <article class="clickable" data-open="walkable" tabindex="0" role="button">
