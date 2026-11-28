@@ -366,6 +366,8 @@
   .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; filter: grayscale(1); transition: filter .5s; }
   .gallery figure:hover img { filter: none; }
   .sub-row .xlink { margin-top: 0; }
+  .gallery.g3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 860px) { .gallery.g3 { grid-template-columns: 1fr 1fr; } .gallery.g3 figure:last-child { grid-column: 1 / -1; } }
   @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; gap: 10px; } }
   .life .visual.photo > span, .life .visual.photo > small { position: relative; }
   @media (max-width: 860px) { .field { grid-template-columns: 1fr; } .field img { height: 260px; } }
@@ -737,7 +739,7 @@
         </article>
       </div>
       <div class="field">
-        <figure class="clickable" data-open="secretome" tabindex="0" role="button"><img src="images/presenting-secretome.jpg" alt="Ananya presenting secretome research at a podium" loading="lazy" style="object-position: 55% 35%"><figcaption>Presenting the stem-cell secretome work · HCG</figcaption></figure>
+        <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/moscow-stage.jpg" alt="BRICS Youth Symphony Orchestra on stage at the Festival of Youth Orchestras of the World in Moscow" loading="lazy"><figcaption>BRICS Youth Symphony Orchestra · Festival of Youth Orchestras of the World, Moscow</figcaption></figure>
         <figure class="clickable" data-open="rab11a" tabindex="0" role="button"><img src="images/rab11-cd63-cells.jpg" alt="Confocal image of INS-1 beta cells expressing CD63-EGFP and Rab11" loading="lazy"><figcaption>CD63-EGFP + Rab11 in INS-1 beta cells, 100× confocal · IISc, 2025</figcaption></figure>
       </div>
     </section>
@@ -850,6 +852,16 @@
       </div>
 
       <div class="sub-row">
+        <h3>Music <span>· violin since 2013</span></h3>
+        <button type="button" class="xlink" data-open="violin" style="background:none;border:0;border-bottom:1px solid currentColor;cursor:pointer;padding:0 0 1px;font-family:inherit;color:inherit">First chair violin ↗</button>
+      </div>
+      <div class="gallery g3">
+        <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/moscow-orchestra.jpg" alt="Youth symphony orchestra performing on an outdoor stage in Moscow" loading="lazy"><figcaption>BRICS Youth Symphony Orchestra · Moscow</figcaption></figure>
+        <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/moscow-audience.jpg" alt="Large audience at the Festival of Youth Orchestras of the World" loading="lazy"><figcaption>The festival audience</figcaption></figure>
+        <figure class="clickable" data-open="violin" tabindex="0" role="button"><img src="images/orchestra-rehearsal.jpg" alt="Ensemble rehearsal in a concert hall" loading="lazy"><figcaption>Rehearsal before a performance · Bengaluru</figcaption></figure>
+      </div>
+
+      <div class="sub-row">
         <h3>Community <span>· since 2023</span></h3>
         <button type="button" class="xlink" data-open="nightingale" style="background:none;border:0;border-bottom:1px solid currentColor;cursor:pointer;padding:0 0 1px;font-family:inherit;color:inherit">Project Nightingale ↗</button>
       </div>
@@ -860,7 +872,7 @@
 
       <div class="life three">
         <article class="clickable" data-open="violin" tabindex="0" role="button">
-          <div class="visual photo"><img src="images/orchestra-rehearsal.jpg" alt="" loading="lazy"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
+          <div class="visual photo"><img src="images/moscow-orchestra.jpg" alt="" loading="lazy"><span class="huge sm">150+</span><small>concerts &amp;<br>recitals</small></div>
           <div class="body">
             <p class="tag">Music · Violin · since 2013</p>
             <h3>First Chair Violin</h3>
@@ -1091,7 +1103,6 @@
     <li>Measured secretome suppression of IFN-γ and TNF-α at 24, 48 and 72 h. PLAY-MSCs suppressed IFN-γ more than FBS-MSCs at every time point.</li>
     <li>Techniques: cell culture, ELISA, PCR, SDS-PAGE, MTT, cytotoxicity analysis and protein characterisation.</li>
   </ul>
-  <div class="m-wide"><figure style="margin:0"><img src="images/presenting-secretome.jpg" alt="Ananya presenting the secretome research at a podium" loading="lazy" style="object-position: 50% 35%"><figcaption>Presenting the secretome work on inflammation and autoimmune disease</figcaption></figure></div>
 </template>
 
 <template id="t-autophagy">
@@ -1171,16 +1182,21 @@
 </template>
 
 <template id="t-violin">
-  <div class="m-wide" style="margin-bottom:22px"><figure style="margin:0"><img src="images/orchestra-rehearsal.jpg" alt="Ensemble rehearsal in a concert hall" loading="lazy"><figcaption>Rehearsal before a performance</figcaption></figure></div>
+  <div class="m-wide" style="margin-bottom:22px"><figure style="margin:0"><img src="images/moscow-stage.jpg" alt="BRICS Youth Symphony Orchestra on stage in Moscow" loading="lazy"><figcaption>BRICS Youth Symphony Orchestra · Festival of Youth Orchestras of the World, Moscow</figcaption></figure></div>
   <p class="m-tag">Music · Violin · Apr 2014 – Nov 2025</p>
   <h2 class="m-title" id="m-title">First Chair Violin</h2>
   <p class="m-lead">The youngest member of South Asia’s largest orchestra. I served as first chair, mentored younger musicians, and trained in masterclasses with Trinity Laban faculty. In ABRSM practical exams I was named to the International Merit List at Grades 3, 6 and 7.</p>
   <div class="m-facts"><div><b>150+</b><span>concerts, recitals &amp; charity events</span></div><div><b>11+</b><span>years</span></div></div>
   <ul class="m-list">
+    <li>Festival of Youth Orchestras of the World, Moscow, with the BRICS Youth Symphony Orchestra.</li>
     <li>Venues include Chowdiah Memorial Hall and Bangalore International Centre, plus free community concerts at St John’s Church and the East Cultural Association.</li>
     <li>Ensembles: Bangalore Star Strings Orchestra (2014 – 2018), the Youth Orchestra (2018 – 2021), and an orchestra led by conductor Grace Biswas.</li>
     <li>Intensives with Prof. Nic Pendlebury, Head of Strings at Trinity Laban; Karl Lutchmayer; Juilliard-trained cellist Avery Waite; and Music in May at the Bangalore School of Music.</li>
   </ul>
+  <div class="m-grid c2">
+    <figure><img src="images/moscow-audience.jpg" alt="Festival audience in Moscow" loading="lazy"><figcaption>The festival audience · Moscow</figcaption></figure>
+    <figure><img src="images/orchestra-rehearsal.jpg" alt="Ensemble rehearsal in a concert hall" loading="lazy"><figcaption>Rehearsal before a performance · Bengaluru</figcaption></figure>
+  </div>
 </template>
 
 <script>
