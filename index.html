@@ -361,12 +361,12 @@
   .life .visual.cover { position: relative; overflow: hidden; background: linear-gradient(160deg, #2b2b2b, #0e0e0e); color: #fff; }
   .life .visual.cover img { position: absolute; right: 24px; top: 22px; bottom: 22px; height: calc(100% - 44px); width: auto; border-radius: 6px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.8); filter: grayscale(1); transition: filter .5s, transform .5s; }
   .life article:hover .visual.cover img { filter: none; transform: rotate(-2deg) translateY(-4px); }
-  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 40px; }
   .gallery figure { margin: 0; min-width: 0; }
   .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; filter: grayscale(1); transition: filter .5s; }
   .gallery figure:hover img { filter: none; }
   .sub-row .xlink { margin-top: 0; }
-  @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; gap: 10px; } .gallery figure:last-child { grid-column: 1 / -1; } }
+  @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; gap: 10px; } }
   .life .visual.photo > span, .life .visual.photo > small { position: relative; }
   @media (max-width: 860px) { .field { grid-template-columns: 1fr; } .field img { height: 260px; } }
 
@@ -856,7 +856,6 @@
       <div class="gallery">
         <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-distribution.jpg" alt="Distribution table with steel tiffins" loading="lazy" style="object-position: 30% 30%"><figcaption>Distribution day · Nightingales Medical Trust</figcaption></figure>
         <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-home-visit.jpg" alt="Delivering supplies on a home visit" loading="lazy"><figcaption>Home visit and supply drop</figcaption></figure>
-        <figure class="clickable" data-open="nightingale" tabindex="0" role="button"><img src="images/nightingale-camp.jpg" alt="Recording screening data at a camp" loading="lazy" style="object-position: 60% 12%"><figcaption>Recording screening data</figcaption></figure>
       </div>
 
       <div class="life three">
@@ -1031,14 +1030,11 @@
   <div class="m-facts"><div><b>25K+</b><span>elders reached</span></div><div><b>60+</b><span>camps</span></div><div><b>500+</b><span>hours</span></div></div>
   <div class="m-facts"><div><b>−22%</b><span>wait times</span></div><div><b>+18%</b><span>screening</span></div><div><b>+30%</b><span>participation</span></div><div><b>+15%</b><span>follow-up adherence</span></div></div>
   <h3 class="m-h">From the camps</h3>
-  <div class="m-grid c3">
+  <div class="m-grid c2">
     <figure><img src="images/nightingale-elders.jpg" alt="Handing supplies to an elder" loading="lazy"><figcaption>Handing out supplies at a care camp</figcaption></figure>
     <figure><img src="images/nightingale-distribution.jpg" alt="Distribution table with steel tiffins" loading="lazy"><figcaption>Distribution day with the Nightingales team</figcaption></figure>
     <figure><img src="images/nightingale-home-visit.jpg" alt="Delivering supplies during a home visit" loading="lazy"><figcaption>Home visit and supply drop</figcaption></figure>
-  </div>
-  <div class="m-grid c2" style="margin-top:10px">
     <figure><img src="images/nightingale-medicines.jpg" alt="Sorting and logging medicines at a camp" loading="lazy"><figcaption>Sorting and logging medicines</figcaption></figure>
-    <figure><img src="images/nightingale-camp.jpg" alt="Recording screening data at a camp" loading="lazy"><figcaption>Recording screening data</figcaption></figure>
   </div>
   <h3 class="m-h">Recognition</h3>
   <ul class="m-list">
